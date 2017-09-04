@@ -89,9 +89,8 @@ public class PlayerController : MonoBehaviour {
 
     public void EnemyKnockBack(float enemyPosx)
     {
-        jump = true;
         float side = Mathf.Sign(enemyPosx - transform.position.x);
-        rb2d.AddForce(Vector2.left * side * jumpPower, ForceMode2D.Impulse);
+        
     }
 
 }
