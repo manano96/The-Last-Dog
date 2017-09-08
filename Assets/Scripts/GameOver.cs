@@ -15,6 +15,7 @@ public class GameOver : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Mouse0)){
 
             SceneManager.LoadScene("Escena2");
+            gameObject.SetActive(false);
             Time.timeScale = 1f;
         }
 	}

@@ -9,12 +9,21 @@ public class barravida : MonoBehaviour {
 
     public Image vida;
 
+    public GameObject perder;
+
+    public Animator anim;
+
+    public Rigidbody2D player;
+
+    public Rigidbody2D enemy1;
+
+
     float hp, maxHp = 100f;
 
 	// Use this for initialization
 	void Start () {
         hp = maxHp;
-	}
+    }
 	
 	public void TakeDamage(float amount)
     {
@@ -25,9 +34,14 @@ public class barravida : MonoBehaviour {
 
         {
 
-            SceneManager.LoadScene("GameOver");
+            perder.SetActive(true);
 
-            Time.timeScale = 0f;
+            anim.SetBool("Dead", true);
+
+            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
+            enemy1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
         }
     }
 }

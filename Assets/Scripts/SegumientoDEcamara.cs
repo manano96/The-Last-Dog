@@ -15,7 +15,7 @@ public class SegumientoDEcamara : MonoBehaviour {
 	void FixedUpdate () {
 
         float posX = follow.transform.position.x;
-        float posY = follow.transform.position.y;
+        float posY = follow.transform.position.y + 1.5f;
 
         transform.position = new Vector3(posX, posY, transform.position.z);
     }
