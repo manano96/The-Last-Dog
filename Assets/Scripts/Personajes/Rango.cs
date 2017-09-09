@@ -13,9 +13,12 @@ public class Rango : MonoBehaviour
     public Transform Target;
     private GameObject Enemy;
     private GameObject Player;
-    private float Range;
+    /*private float Range;*/
+    private float Ladrar;
     private float Ataque;
     public float Speed;
+
+    float timeR = 3f;
 
     public Rigidbody2D rb;
 
@@ -42,10 +45,6 @@ public class Rango : MonoBehaviour
 
         if (curHealth <= 0)
         {
-            /*nextAtack = Time.time + atackRate;
-            barravida.SendMessage("TakeDamage", 15);*/
-
-            /*Destroy(gameObject);*/
 
             caminar.SetBool("Muerte", true);
             caminar.SetBool("Ataque", false);
@@ -55,6 +54,8 @@ public class Rango : MonoBehaviour
             GetComponent<CapsuleCollider2D>().size = new Vector2(0.5f, 0.5f);
             GetComponent<CapsuleCollider2D>().offset = new Vector2(0f, 0.25f);
 
+            GetComponent<BoxCollider2D>().size = new Vector2(0f, 0f);
+
             transform.gameObject.tag = "Ground";
 
 
@@ -62,12 +63,23 @@ public class Rango : MonoBehaviour
             gameObject.GetComponent<Rango>().enabled = false;
         }
 
-        
+        if (Input.GetKeyDown("x")){
 
+            GetComponent<BoxCollider2D>().size = new Vector2(8f, 1.5f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(-4.5f, 0.82f);
+            Invoke("ActivateNow", timeR);
+        }
 
+   }
+
+    void ActivateNow()
+    {
+        GetComponent<BoxCollider2D>().size = new Vector2(5f, 1.5f);
+        GetComponent<BoxCollider2D>().offset = new Vector2(-3f, 0.82f);
     }
 
-        void FixedUpdate()
+
+    void FixedUpdate()
     {
         float xenemy = Enemy.transform.position.x;
         float xplayer = Player.transform.position.x;
@@ -83,7 +95,7 @@ public class Rango : MonoBehaviour
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
-        Range = Vector2.Distance(Enemy.transform.position, Player.transform.position);
+        /*Range = Vector2.Distance(Enemy.transform.position, Player.transform.position);
         if (Range <= 5)
         {
             Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
@@ -97,11 +109,11 @@ public class Rango : MonoBehaviour
             Vector2 velocity = new Vector2((transform.position.x - Enemy.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
             GetComponent<Rigidbody2D>().velocity = -velocity;
             caminar.SetBool("DentrodelRango", false);
-        }
+        }*/
 
         Ataque = Vector2.Distance(Enemy.transform.position, Player.transform.position);
 
-        if (Ataque <= 1 )
+        if (Ataque <= 1)
         {
             caminar.SetBool("Ataque", true);
 
@@ -116,10 +128,16 @@ public class Rango : MonoBehaviour
             caminar.SetBool("Ataque", false);
 
             nextAtack = Time.time + atackRate;
-            
+
         }
 
-        
+
+
+
+
+
+
+
     }
 
     public void Damage(int damage)
@@ -127,6 +145,30 @@ public class Rango : MonoBehaviour
         curHealth -= damage;
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
+            GetComponent<Rigidbody2D>().velocity = -velocity;
+            caminar.SetBool("DentrodelRango", true);
+        }
+
+           
+
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player") {
+            Vector2 velocity = new Vector2((transform.position.x - Enemy.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            caminar.SetBool("DentrodelRango", false);
+      }
+    }
 }
 
 
