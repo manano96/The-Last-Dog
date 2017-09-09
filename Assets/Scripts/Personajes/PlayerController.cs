@@ -50,11 +50,13 @@ public class PlayerController : MonoBehaviour {
             jump = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)){
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.DownArrow))
+        {
             maxSpeed = 5f;
             speed = 125f;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift)){
+        if (Input.GetKeyUp(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.DownArrow))
+        {
             maxSpeed = 3f;
             speed = 75f;
         }
@@ -65,6 +67,8 @@ public class PlayerController : MonoBehaviour {
 
             GetComponent<BoxCollider2D>().size = new Vector2(1.06f, 0.33f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0.17f);
+
+            jump = false;
 
             maxSpeed = 1.5f;
             speed = 40f;
@@ -111,7 +115,8 @@ public class PlayerController : MonoBehaviour {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
-        if (jump){
+        if (jump && Input.GetKeyDown(KeyCode.DownArrow))
+        {
             rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             jump = false;
         }
