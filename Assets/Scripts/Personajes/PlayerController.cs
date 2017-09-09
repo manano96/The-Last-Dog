@@ -12,12 +12,19 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb2d;
     private Animator anim;
     private bool jump;
+    private bool movement = true;
+    private SpriteRenderer spr;
 
-	// Use this for initialization
-	void Start () {
+    private GameObject barravida;
+
+    // Use this for initialization
+    void Start () {
 
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spr = GetComponent<SpriteRenderer>();
+
+        barravida = GameObject.Find("barravida");
 
     }
 
@@ -64,6 +71,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         float h = Input.GetAxis("Horizontal");
+        if (!movement) h = 0;
 
         rb2d.AddForce(Vector2.right * speed * h);
 
@@ -89,8 +97,25 @@ public class PlayerController : MonoBehaviour {
 
     public void EnemyKnockBack(float enemyPosx)
     {
+        barravida.SendMessage("TakeDamage", 15);
+
+        jump = true;
+
         float side = Mathf.Sign(enemyPosx - transform.position.x);
-        
+
+        rb2d.AddForce(Vector2.left * side * jumpPower);
+
+        movement = false;
+        Invoke("EnableMovement", 0.8f);
+
+        spr.color = Color.red;
+
+    }
+
+    void EnableMovement()
+    {
+        movement = true;
+        spr.color = Color.white;
     }
 
 }
