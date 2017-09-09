@@ -58,6 +58,29 @@ public class PlayerController : MonoBehaviour {
             maxSpeed = 3f;
             speed = 75f;
         }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            anim.SetBool("Agacharse", true);
+
+            GetComponent<BoxCollider2D>().size = new Vector2(1.06f, 0.33f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0.17f);
+
+            maxSpeed = 1.5f;
+            speed = 40f;
+        }
+
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            anim.SetBool("Agacharse", false);
+
+            GetComponent<BoxCollider2D>().size = new Vector2(1.06f, 0.9333333f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0.07f, 0.4666667f);
+
+            maxSpeed = 3f;
+            speed = 75f;
+        }
+
     }
 
     void FixedUpdate()
@@ -71,11 +94,13 @@ public class PlayerController : MonoBehaviour {
         }
 
         float h = Input.GetAxis("Horizontal");
+
         if (!movement) h = 0;
 
         rb2d.AddForce(Vector2.right * speed * h);
 
-            float limitedSpeed = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
+
+        float limitedSpeed = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
             rb2d.velocity = new Vector2(limitedSpeed, rb2d.velocity.y);
 
         if (h > 0.1f){
@@ -93,6 +118,8 @@ public class PlayerController : MonoBehaviour {
 
 
         Debug.Log(rb2d.velocity.x);
+        Debug.Log(rb2d.velocity.y);
+
     }
 
     public void EnemyKnockBack(float enemyPosx)

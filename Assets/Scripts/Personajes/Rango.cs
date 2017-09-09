@@ -50,9 +50,13 @@ public class Rango : MonoBehaviour
             caminar.SetBool("Ataque", false);
             caminar.SetBool("DentrodelRango", false);
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 
+            GetComponent<CapsuleCollider2D>().isTrigger = true;
             GetComponent<CapsuleCollider2D>().size = new Vector2(0.5f, 0.5f);
             GetComponent<CapsuleCollider2D>().offset = new Vector2(0f, 0.25f);
+
+
 
             GetComponent<BoxCollider2D>().size = new Vector2(0f, 0f);
 
