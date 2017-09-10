@@ -49,12 +49,22 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             jump = true;
+
+            anim.SetBool("Agacharse", false);
+
+            GetComponent<BoxCollider2D>().size = new Vector2(1.06f, 0.9333333f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0.07f, 0.4666667f);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             maxSpeed = 5f;
             speed = 125f;
+
+            anim.SetBool("Agacharse", false);
+
+            GetComponent<BoxCollider2D>().size = new Vector2(1.06f, 0.9333333f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0.07f, 0.4666667f);
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
