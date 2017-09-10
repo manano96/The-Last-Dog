@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuPpal : MonoBehaviour {
 
+
 	public void BtnNuevoJuego(string nivelNuevoJuego)
     {
         SceneManager.LoadScene(nivelNuevoJuego);
+        Time.timeScale = 1;
     }
 
     public void BtnSalirJuego()

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     public float maxSpeed = 5f;
     public float speed = 2f;
@@ -18,7 +19,8 @@ public class PlayerController : MonoBehaviour {
     private GameObject barravida;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -28,21 +30,26 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-    void OnCollisionStay2D(Collision2D col){
-        if (col.gameObject.tag == "Ground"){
+    void OnCollisionStay2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Ground")
+        {
             grounded = true;
         }
-        
+
     }
 
-    void OnCollisionExit2D(Collision2D col){
-        if (col.gameObject.tag == "Ground"){
+    void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Ground")
+        {
             grounded = false;
         }
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
         anim.SetBool("Grounded", grounded);
 
@@ -104,7 +111,8 @@ public class PlayerController : MonoBehaviour {
         Vector3 fixedVelocity = rb2d.velocity;
         fixedVelocity.x *= 0.75f;
 
-        if (grounded){
+        if (grounded)
+        {
             rb2d.velocity = fixedVelocity;
         }
 
@@ -116,13 +124,15 @@ public class PlayerController : MonoBehaviour {
 
 
         float limitedSpeed = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
-            rb2d.velocity = new Vector2(limitedSpeed, rb2d.velocity.y);
+        rb2d.velocity = new Vector2(limitedSpeed, rb2d.velocity.y);
 
-        if (h > 0.1f){
+        if (h > 0.1f)
+        {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
 
-        if (h < -0.1f){
+        if (h < -0.1f)
+        {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
