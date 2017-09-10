@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    private GameObject barravida;
+
+    // Use this for initialization
+    void Start () {
+        barravida = GameObject.Find("barravida");
+        barravida.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {

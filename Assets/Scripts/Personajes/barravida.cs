@@ -18,6 +18,7 @@ public class barravida : MonoBehaviour {
     public Rigidbody2D enemy1;
 
 
+
     float hp, maxHp = 100f;
 
 	// Use this for initialization
@@ -35,6 +36,8 @@ public class barravida : MonoBehaviour {
         {
 
             perder.SetActive(true);
+
+            
 
             anim.SetBool("Dead", true);
 
