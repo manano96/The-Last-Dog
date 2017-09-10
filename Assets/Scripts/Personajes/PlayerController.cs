@@ -46,16 +46,17 @@ public class PlayerController : MonoBehaviour {
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
         anim.SetBool("Grounded", grounded);
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded){
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        {
             jump = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             maxSpeed = 5f;
             speed = 125f;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift) && Input.GetKeyUp(KeyCode.DownArrow))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             maxSpeed = 3f;
             speed = 75f;
@@ -115,11 +116,13 @@ public class PlayerController : MonoBehaviour {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
-        if (jump && Input.GetKeyDown(KeyCode.DownArrow))
+        if (jump)
         {
             rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             jump = false;
         }
+
+
 
 
         Debug.Log(rb2d.velocity.x);
