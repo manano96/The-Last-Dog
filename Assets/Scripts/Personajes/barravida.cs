@@ -47,4 +47,11 @@ public class barravida : MonoBehaviour {
 
         }
     }
+
+    public void NoDamage(float amount)
+    {
+        hp = Mathf.Clamp(hp + amount, 0f, maxHp);
+        vida.transform.localScale = new Vector2(hp / maxHp, 1);
+
+    }
 }
