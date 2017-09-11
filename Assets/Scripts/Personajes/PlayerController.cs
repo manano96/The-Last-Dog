@@ -114,6 +114,9 @@ public class PlayerController : MonoBehaviour
         if (grounded)
         {
             rb2d.velocity = fixedVelocity;
+            anim.SetBool("Revivir", false);
+            anim.SetBool("Dead", false);
+
         }
 
         float h = Input.GetAxis("Horizontal");

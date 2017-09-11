@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Caja : MonoBehaviour {
 
-    private GameObject player;
-
     public Animator anim;
 
     // Use this for initialization
     void Start () {
 
-        player = GameObject.Find("Player");
     }
 	
 	// Update is called once per frame

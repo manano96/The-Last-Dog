@@ -40,6 +40,8 @@ public class barravida : MonoBehaviour {
             
 
             anim.SetBool("Dead", true);
+            anim.SetBool("Revivir", false);
+
 
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 

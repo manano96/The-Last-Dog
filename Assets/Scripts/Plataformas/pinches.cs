@@ -5,16 +5,9 @@ using UnityEngine;
 public class pinches : MonoBehaviour
 {
 
-    public float atackRate = 0.5F;
-    private float nextAtack = 0.0F;
-
-    private GameObject barravida;
-
     // Use this for initialization
     void Start()
     {
-
-        barravida = GameObject.Find("barravida");
 
     }
 
