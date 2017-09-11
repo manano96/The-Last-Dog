@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
 
     private GameObject barravida;
 
+    public Vector3 respawnPoint;
+
+
     // Use this for initialization
     void Start()
     {
@@ -27,6 +30,8 @@ public class PlayerController : MonoBehaviour
         spr = GetComponent<SpriteRenderer>();
 
         barravida = GameObject.Find("barravida");
+
+        respawnPoint = transform.position;
 
     }
 
@@ -175,5 +180,11 @@ public class PlayerController : MonoBehaviour
         movement = true;
         spr.color = Color.white;
     }
+
+    void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.tag == "Checkpoints") {
+			respawnPoint = other.transform.position;
+		}
+	}
 
 }
