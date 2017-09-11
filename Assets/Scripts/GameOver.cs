@@ -15,6 +15,8 @@ public class GameOver : MonoBehaviour {
 
     public Image vida;
 
+    public GameObject player2;
+
     // Use this for initialization
     void Start () {
         barravida = GameObject.Find("barravida");
@@ -37,6 +39,10 @@ public class GameOver : MonoBehaviour {
 
             enemy1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             enemy1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+
+            player2.transform.position = player2.GetComponent<PlayerController>().respawnPoint;
+
 
             barravida.SetActive(true);
             barravida.SendMessage("NoDamage", 100);
