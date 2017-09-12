@@ -17,10 +17,16 @@ public class GameOver : MonoBehaviour {
 
     public GameObject player2;
 
+    public PlayerController playercontroller;
+
+    public Rango rango;
+
+    public PlayerAttack playerattack;
+
     // Use this for initialization
     void Start () {
         barravida = GameObject.Find("barravida");
-        barravida.SetActive(false);
+        barravida.SetActive(true);
     }
 	
 	// Update is called once per frame
@@ -31,7 +37,13 @@ public class GameOver : MonoBehaviour {
             gameObject.SetActive(false);
             Time.timeScale = 1f;
 
+            playercontroller.enabled = true;
+            rango.enabled = true;
+            playerattack.enabled = true;
+
             player.SetBool("Revivir", true);
+            player.SetBool("Dead", false);
+
 
             player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             player1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;

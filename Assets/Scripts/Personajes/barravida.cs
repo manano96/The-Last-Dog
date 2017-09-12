@@ -12,11 +12,18 @@ public class barravida : MonoBehaviour {
     public GameObject perder;
 
     public Animator anim;
+    public Animator anim2;
+
 
     public Rigidbody2D player;
 
     public Rigidbody2D enemy1;
 
+    public PlayerController playercontroller;
+
+    public Rango rango;
+
+    public PlayerAttack playerattack;
 
 
     float hp, maxHp = 100f;
@@ -42,6 +49,13 @@ public class barravida : MonoBehaviour {
             anim.SetBool("Dead", true);
             anim.SetBool("Revivir", false);
 
+            anim2.SetBool("Ataque", false);
+            anim2.SetBool("DentrodelRango", false);
+
+
+            playercontroller.enabled = false;
+            rango.enabled = false;
+            playerattack.enabled = false;
 
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 

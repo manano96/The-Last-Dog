@@ -120,7 +120,6 @@ public class PlayerController : MonoBehaviour
         {
             rb2d.velocity = fixedVelocity;
             anim.SetBool("Revivir", false);
-            anim.SetBool("Dead", false);
 
         }
 
