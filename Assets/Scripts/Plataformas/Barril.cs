@@ -29,6 +29,11 @@ public class Barril : MonoBehaviour {
         }
     }
 
+        void OnTriggerExit2D(Collider2D collision)
+    {
+        CancelInvoke("Gotitacayendo");
+    }
+
     void Gotitacayendo() {
 
 

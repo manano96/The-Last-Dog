@@ -21,7 +21,7 @@ public class pinches : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            
+           
                 col.SendMessage("EnemyKnockBack", transform.position.x);
 
         }
