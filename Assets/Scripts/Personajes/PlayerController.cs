@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 respawnPoint;
 
+    public Enredadera enredadera;
+
 
     // Use this for initialization
     void Start()
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
         barravida = GameObject.Find("barravida");
 
         respawnPoint = transform.position;
+        enredadera.enabled = false;
 
     }
 
@@ -107,6 +110,12 @@ public class PlayerController : MonoBehaviour
             maxSpeed = 3f;
             speed = 75f;
         }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            enredadera.enabled = true;
+        }
+
 
     }
 
@@ -185,10 +194,18 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag == "Checkpoints") {
-			respawnPoint = other.transform.position;
-            
+        if (other.gameObject.tag == "Checkpoints") {
+            respawnPoint = other.transform.position;
+
         }
-	}
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Enredadera")
+        {
+            enredadera.enabled = false;
+        }
+    }
 
 }
