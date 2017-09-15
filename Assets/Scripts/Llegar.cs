@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Llegar : MonoBehaviour {
 
+	public string escena;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -19,7 +21,7 @@ public class Llegar : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Ganar");
+            SceneManager.LoadScene(escena);
 
             Time.timeScale = 0f;
         }
