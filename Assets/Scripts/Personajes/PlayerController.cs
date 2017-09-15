@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     private bool jump;
     private bool movement = true;
     private SpriteRenderer spr;
+    private GameObject Enredadera;
+    private GameObject Player;
+    private float Trepar;
 
     private GameObject barravida;
 
@@ -58,8 +61,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Enredadera = GameObject.FindGameObjectWithTag("Enredadera");
+        Player = GameObject.FindGameObjectWithTag("Player");
+
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
         anim.SetBool("Grounded", grounded);
+
+        float xenred = Enredadera.transform.position.x;
+        float xplayer = Player.transform.position.x;
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded && transform.position.y > -0.3f)
         {
@@ -111,7 +121,9 @@ public class PlayerController : MonoBehaviour
             speed = 75f;
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        Trepar = Vector2.Distance(Enredadera.transform.position, Player.transform.position);
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) && Trepar < 2.5f && Trepar > -2.5f)
         {
             enredadera.enabled = true;
         }
