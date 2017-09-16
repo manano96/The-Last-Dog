@@ -23,6 +23,9 @@ public class GameOver : MonoBehaviour {
 
     public PlayerAttack playerattack;
 
+    public Bebe bebe;
+
+
     // Use this for initialization
     void Start () {
         barravida = GameObject.Find("barravida");
@@ -40,6 +43,8 @@ public class GameOver : MonoBehaviour {
             playercontroller.enabled = true;
             rango.enabled = true;
             playerattack.enabled = true;
+            bebe.enabled = true;
+
 
             player.SetBool("Revivir", true);
             player.SetBool("Dead", false);

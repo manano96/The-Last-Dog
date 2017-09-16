@@ -13,17 +13,24 @@ public class barravida : MonoBehaviour {
 
     public Animator anim;
     public Animator anim2;
+    public Animator bebeanim;
+
 
 
     public Rigidbody2D player;
 
     public Rigidbody2D enemy1;
 
+    public Rigidbody2D bebe1;
+
     public PlayerController playercontroller;
 
     public Rango rango;
 
     public PlayerAttack playerattack;
+
+    public Bebe bebe;
+
 
 
     float hp, maxHp = 100f;
@@ -52,14 +59,21 @@ public class barravida : MonoBehaviour {
             anim2.SetBool("Ataque", false);
             anim2.SetBool("DentrodelRango", false);
 
+            bebeanim.SetBool("Ataque", false);
+            bebeanim.SetBool("DentrodelRango", false);
 
             playercontroller.enabled = false;
             rango.enabled = false;
             playerattack.enabled = false;
+            bebe.enabled = false;
+
 
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
             enemy1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
+            bebe1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
 
         }
     }
