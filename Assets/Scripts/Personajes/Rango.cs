@@ -6,21 +6,19 @@ using UnityEngine;
 public class Rango : MonoBehaviour
 {
 
-    public int curHealth;
-    public int maxHealth;
+    public int curHealth = 100;
+    public int maxHealth = 100;
 
-    public Animator caminar;
-    public Transform Target;
-    private GameObject Enemy;
+    private Animator caminar;
+
+
+    public GameObject Enemy;
     private GameObject Player;
-    /*private float Range;*/
     private float Ladrar;
-    private float Ataque;
-    public float Speed;
+    private float Ataque1;
+    private float Speed = 0.3f;
 
     float timeR = 3f;
-
-    public Rigidbody2D rb;
 
     private GameObject barravida;
 
@@ -30,18 +28,17 @@ public class Rango : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
+
         curHealth = maxHealth;
 
         barravida = GameObject.Find("barravida");
+        caminar = Enemy.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        Enemy = GameObject.FindGameObjectWithTag("Enemy");
-        Player = GameObject.FindGameObjectWithTag("Player");
-
 
         if (curHealth <= 0)
         {
@@ -99,32 +96,16 @@ public class Rango : MonoBehaviour
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
-        /*Range = Vector2.Distance(Enemy.transform.position, Player.transform.position);
-        if (Range <= 5)
-        {
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
-            GetComponent<Rigidbody2D>().velocity = -velocity;
-            caminar.SetBool("DentrodelRango", true);
-            
-        }
-        else
-        {
+        Ataque1 = Vector2.Distance(Enemy.transform.position, Player.transform.position);
 
-            Vector2 velocity = new Vector2((transform.position.x - Enemy.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
-            GetComponent<Rigidbody2D>().velocity = -velocity;
-            caminar.SetBool("DentrodelRango", false);
-        }*/
-
-        Ataque = Vector2.Distance(Enemy.transform.position, Player.transform.position);
-
-        if (Ataque <= 1)
+        if (Ataque1 <= 1)
         {
             caminar.SetBool("Ataque", true);
 
             if (Time.time > nextAtack)
             {
                 nextAtack = Time.time + atackRate;
-                barravida.SendMessage("TakeDamage", 15);
+                barravida.SendMessage("TakeDamage", 10);
             }
         }
         else
@@ -137,16 +118,11 @@ public class Rango : MonoBehaviour
 
 
 
-
-
-
-
-
     }
 
     public void Damage(int damage)
     {
-        curHealth -= damage;
+        curHealth -= 25;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -164,6 +140,7 @@ public class Rango : MonoBehaviour
            
 
     }
+
 
     void OnTriggerExit2D(Collider2D other)
     {

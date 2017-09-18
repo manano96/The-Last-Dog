@@ -12,8 +12,7 @@ public class PlayerAttack : MonoBehaviour {
     private float attackCd = 0.5f;
 
     private Animator anim;
-
-    public Collider2D attackTrigger;
+    private GameObject Player;
 
     public AudioClip Ladrido;
 
@@ -23,13 +22,14 @@ public class PlayerAttack : MonoBehaviour {
     private void Start()
     {
         fuenteAudio = GetComponent<AudioSource>();
+        Player = GameObject.FindGameObjectWithTag("TAttack");
+
+
     }
 
     void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
-        attackTrigger.enabled = false;
-
 
     }
 
@@ -40,7 +40,7 @@ public class PlayerAttack : MonoBehaviour {
             attacking = true;
             attackTimer = attackCd;
 
-            attackTrigger.enabled = true;
+            this.Player.gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
      
      if (attacking)
@@ -51,7 +51,7 @@ public class PlayerAttack : MonoBehaviour {
             }
             else{
                 attacking = false;
-                attackTrigger.enabled = false;
+                this.Player.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
 
         }

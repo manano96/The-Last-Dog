@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Barril : MonoBehaviour {
 
-    public GameObject gota;
-
     public GameObject Gotdo;
 
     // Use this for initialization
@@ -27,6 +25,11 @@ public class Barril : MonoBehaviour {
             InvokeRepeating("Gotitacayendo", 0f, 2f);
 
         }
+    }
+
+        void OnTriggerExit2D(Collider2D collision)
+    {
+        CancelInvoke("Gotitacayendo");
     }
 
     void Gotitacayendo() {

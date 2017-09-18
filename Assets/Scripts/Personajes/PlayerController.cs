@@ -15,10 +15,15 @@ public class PlayerController : MonoBehaviour
     private bool jump;
     private bool movement = true;
     private SpriteRenderer spr;
+    private GameObject Enredadera;
+    private GameObject Player;
+    private float Trepar;
 
     private GameObject barravida;
 
     public Vector3 respawnPoint;
+
+    private Enredadera enredadera;
 
 
     // Use this for initialization
@@ -32,6 +37,11 @@ public class PlayerController : MonoBehaviour
         barravida = GameObject.Find("barravida");
 
         respawnPoint = transform.position;
+        enredadera = GameObject.Find("Enredaderax").GetComponent<Enredadera>();
+
+        float xenred = Enredadera.transform.position.x;
+        float xplayer = Player.transform.position.x;
+
 
     }
 
@@ -55,10 +65,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Enredadera = GameObject.Find("Enredaderax");
+        Player = GameObject.FindGameObjectWithTag("Player");
+
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
         anim.SetBool("Grounded", grounded);
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        
+
+        if (Input.GetKeyDown(KeyCode.Space) && grounded && transform.position.y > -0.3f)
         {
             jump = true;
 
@@ -108,6 +124,14 @@ public class PlayerController : MonoBehaviour
             speed = 75f;
         }
 
+        Trepar = Vector2.Distance(Enredadera.transform.position, Player.transform.position);
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) && Trepar < 2.5f && Trepar > -2.5f)
+        {
+            enredadera.enabled = true;
+        }
+
+
     }
 
     void FixedUpdate()
@@ -120,7 +144,6 @@ public class PlayerController : MonoBehaviour
         {
             rb2d.velocity = fixedVelocity;
             anim.SetBool("Revivir", false);
-            anim.SetBool("Dead", false);
 
         }
 
@@ -133,6 +156,10 @@ public class PlayerController : MonoBehaviour
 
         float limitedSpeed = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
         rb2d.velocity = new Vector2(limitedSpeed, rb2d.velocity.y);
+
+       
+
+      
 
         if (h > 0.1f)
         {
@@ -182,9 +209,18 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag == "Checkpoints") {
-			respawnPoint = other.transform.position;
-		}
-	}
+        if (other.gameObject.tag == "Checkpoints") {
+            respawnPoint = other.transform.position;
+
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Enredadera")
+        {
+            enredadera.enabled = false;
+        }
+    }
 
 }
