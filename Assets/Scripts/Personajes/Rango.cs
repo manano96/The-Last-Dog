@@ -146,8 +146,9 @@ public class Rango : MonoBehaviour
     {
         if (other.tag == "Player") {
             Vector2 velocity = new Vector2((transform.position.x - Enemy.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            caminar.SetBool("DentrodelRango", false);
+			GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+			GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+			caminar.SetBool("DentrodelRango", false);
       }
     }
 }

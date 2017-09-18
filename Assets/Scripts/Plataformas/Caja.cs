@@ -14,7 +14,8 @@ public class Caja : MonoBehaviour {
 
         anim = Player.GetComponent<Animator>();
 
-		GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+		GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+		GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 	
 	// Update is called once per frame
@@ -42,6 +43,8 @@ public class Caja : MonoBehaviour {
             anim.SetBool("Empujar", false);
 
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+		
+
 
         }
     }
