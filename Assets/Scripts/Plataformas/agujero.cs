@@ -32,5 +32,12 @@ public class agujero : MonoBehaviour
             
 
         }
+
+        if (col.gameObject.tag == "Enemy")
+        {
+            col.SendMessageUpwards("Damage", 200);
+
+
+        }
     }
 }

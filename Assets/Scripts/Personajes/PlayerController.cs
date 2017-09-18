@@ -39,6 +39,9 @@ public class PlayerController : MonoBehaviour
         respawnPoint = transform.position;
         enredadera = GameObject.Find("Enredaderax").GetComponent<Enredadera>();
 
+        float xenred = Enredadera.transform.position.x;
+        float xplayer = Player.transform.position.x;
+
 
     }
 
@@ -69,8 +72,7 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
         anim.SetBool("Grounded", grounded);
 
-        float xenred = Enredadera.transform.position.x;
-        float xplayer = Player.transform.position.x;
+        
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded && transform.position.y > -0.3f)
         {

@@ -25,6 +25,13 @@ public class pinches : MonoBehaviour
                 col.SendMessage("EnemyKnockBack", transform.position.x);
 
         }
+
+        if (col.gameObject.tag == "Enemy")
+        {
+            col.SendMessageUpwards("Damage", 20);
+
+
+        }
     }
 }
 
