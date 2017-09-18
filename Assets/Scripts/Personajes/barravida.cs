@@ -7,29 +7,27 @@ using UnityEngine.SceneManagement;
 
 public class barravida : MonoBehaviour {
 
+    private GameObject Player;
+    private GameObject Enemy;
+    private GameObject Enemy2;
+
+
     public Image vida;
 
-    public GameObject perder;
+    private GameObject perder;
 
-    public Animator anim;
-    public Animator anim2;
-    public Animator bebeanim;
+    private Animator anim;
+    private Animator anim2;
+    private Animator bebeanim;
 
+    private Rigidbody2D player;
+    private Rigidbody2D enemy1;
+    private Rigidbody2D bebe1;
 
-
-    public Rigidbody2D player;
-
-    public Rigidbody2D enemy1;
-
-    public Rigidbody2D bebe1;
-
-    public PlayerController playercontroller;
-
-    public Rango rango;
-
-    public PlayerAttack playerattack;
-
-    public Bebe bebe;
+    private PlayerController playercontroller;
+    private Rango rango;
+    private PlayerAttack playerattack;
+    private Bebe bebe;
 
 
 
@@ -38,9 +36,31 @@ public class barravida : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         hp = maxHp;
+
+        perder = GameObject.FindGameObjectWithTag("Finish");
+        perder.SetActive(false);
+
+
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Enemy = GameObject.FindGameObjectWithTag("Enemy");
+        Enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
+
+        anim = Player.GetComponent<Animator>();
+        anim2 = Enemy.GetComponent<Animator>();
+        bebeanim = Enemy2.GetComponent<Animator>();
+
+        player = Player.GetComponent<Rigidbody2D>();
+        enemy1 = Enemy.GetComponent<Rigidbody2D>();
+        bebe1 = Enemy2.GetComponent<Rigidbody2D>();
+
+        playercontroller = GameObject.Find("Player").GetComponent<PlayerController>();
+        rango = GameObject.Find("Zombie1").GetComponent<Rango>();
+        playerattack = GameObject.Find("Player").GetComponent<PlayerAttack>();
+        bebe = GameObject.Find("Bebe1").GetComponent<Bebe>();
+
     }
-	
-	public void TakeDamage(float amount)
+
+    public void TakeDamage(float amount)
     {
         hp = Mathf.Clamp(hp - amount, 0f, maxHp);
         vida.transform.localScale = new Vector2(hp/maxHp, 1);

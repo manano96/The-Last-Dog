@@ -6,20 +6,23 @@ public class Enredadera : MonoBehaviour {
 
 
     public float speed = 50f;
-    public Animator anim;
+    private Animator anim;
 
-
+    private GameObject Player;
 
     // Use this for initialization
     void Start()
     {
-        
+        Player = GameObject.FindGameObjectWithTag("Player");
+        anim = Player.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        this.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+      
+
     }
 
 
@@ -62,7 +65,9 @@ public class Enredadera : MonoBehaviour {
             anim.SetBool("Trepar", false);
             anim.SetBool("Quieto", false);
             other.GetComponent<Rigidbody2D>().gravityScale = 1f;
-            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            this.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+          
+
         }
     }
 }

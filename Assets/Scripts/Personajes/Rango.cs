@@ -6,15 +6,17 @@ using UnityEngine;
 public class Rango : MonoBehaviour
 {
 
-    public int curHealth;
-    public int maxHealth;
+    public int curHealth = 100;
+    public int maxHealth = 100;
 
-    public Animator caminar;
+    private Animator caminar;
+
+
     public GameObject Enemy;
     private GameObject Player;
     private float Ladrar;
     private float Ataque1;
-    public float Speed;
+    private float Speed = 0.3f;
 
     float timeR = 3f;
 
@@ -26,17 +28,17 @@ public class Rango : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
+
         curHealth = maxHealth;
 
         barravida = GameObject.Find("barravida");
+        caminar = Enemy.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        Player = GameObject.FindGameObjectWithTag("Player");
-
 
         if (curHealth <= 0)
         {
@@ -139,18 +141,6 @@ public class Rango : MonoBehaviour
 
     }
 
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
-            GetComponent<Rigidbody2D>().velocity = -velocity;
-            caminar.SetBool("DentrodelRango", true);
-        }
-    }
 
     void OnTriggerExit2D(Collider2D other)
     {

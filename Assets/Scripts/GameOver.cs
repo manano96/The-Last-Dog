@@ -7,28 +7,38 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour {
 
     private GameObject barravida;
-    public Animator player;
+    private GameObject Player;
+    private GameObject Enemy;
+    private GameObject Vida;
 
-    public Rigidbody2D player1;
+    private Animator player;
 
-    public Rigidbody2D enemy1;
+    private Rigidbody2D player1;
+    private Rigidbody2D enemy1;
 
-    public Image vida;
-
-    public GameObject player2;
-
-    public PlayerController playercontroller;
-
-    public Rango rango;
-
-    public PlayerAttack playerattack;
-
-    public Bebe bebe;
+    private PlayerController playercontroller;
+    private Rango rango;
+    private PlayerAttack playerattack;
+    private Bebe bebe;
 
 
     // Use this for initialization
     void Start () {
         barravida = GameObject.Find("barravida");
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Enemy = GameObject.FindGameObjectWithTag("Enemy");
+        Vida = GameObject.FindGameObjectWithTag("Vida");
+
+        player1 = Player.GetComponent<Rigidbody2D>();
+        enemy1 = Enemy.GetComponent<Rigidbody2D>();
+
+        player = Player.GetComponent<Animator>();
+
+        playercontroller = GameObject.Find("Player").GetComponent<PlayerController>();
+        rango = GameObject.Find("Zombie1").GetComponent<Rango>();
+        playerattack = GameObject.Find("Player").GetComponent<PlayerAttack>();
+        bebe = GameObject.Find("Bebe1").GetComponent<Bebe>();
+
         barravida.SetActive(true);
     }
 	
@@ -58,7 +68,7 @@ public class GameOver : MonoBehaviour {
             enemy1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
 
-            player2.transform.position = player2.GetComponent<PlayerController>().respawnPoint;
+            Player.transform.position = Player.GetComponent<PlayerController>().respawnPoint;
 
 
             barravida.SetActive(true);

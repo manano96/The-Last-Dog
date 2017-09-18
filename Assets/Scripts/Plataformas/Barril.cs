@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Barril : MonoBehaviour {
 
-    public GameObject gota;
-
     public GameObject Gotdo;
 
     // Use this for initialization

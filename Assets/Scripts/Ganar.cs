@@ -5,12 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Ganar : MonoBehaviour
 {
-
-    private float Range;
-
-    private GameObject Enemy;
-    private GameObject Player;
-
     // Use this for initialization
     void Start()
     {

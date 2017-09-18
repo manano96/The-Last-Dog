@@ -8,7 +8,8 @@ public class Bebe : MonoBehaviour
     public int curHealth;
     public int maxHealth;
 
-    public Animator caminar;
+    private Animator caminar;
+
     public GameObject Enemy;
     private GameObject Player;
     private float Ladrar;
@@ -31,6 +32,7 @@ public class Bebe : MonoBehaviour
         curHealth = maxHealth;
 
         barravida = GameObject.Find("barravida");
+        caminar = Enemy.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -150,19 +152,7 @@ public class Bebe : MonoBehaviour
 
     }  
 
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
-            GetComponent<Rigidbody2D>().velocity = -velocity;
-            caminar.SetBool("DentrodelRango", true);
-        }
-    }
-
+  
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")

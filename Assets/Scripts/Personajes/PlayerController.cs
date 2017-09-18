@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 respawnPoint;
 
-    public Enredadera enredadera;
+    private Enredadera enredadera;
 
 
     // Use this for initialization
@@ -37,7 +37,8 @@ public class PlayerController : MonoBehaviour
         barravida = GameObject.Find("barravida");
 
         respawnPoint = transform.position;
-        enredadera.enabled = false;
+        enredadera = GameObject.Find("Enredaderax").GetComponent<Enredadera>();
+
 
     }
 
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        Enredadera = GameObject.FindGameObjectWithTag("Enredadera");
+        Enredadera = GameObject.Find("Enredaderax");
         Player = GameObject.FindGameObjectWithTag("Player");
 
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));

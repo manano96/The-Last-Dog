@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SegumientoDEcamara : MonoBehaviour {
 
-    public GameObject follow;
+    private GameObject follow;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        follow = GameObject.FindGameObjectWithTag("Player");
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
