@@ -66,7 +66,7 @@ public class Rango : MonoBehaviour
 
         if (Input.GetKeyDown("x")){
 
-            GetComponent<BoxCollider2D>().size = new Vector2(8f, 1.5f);
+            GetComponent<BoxCollider2D>().size = new Vector2(8f, 2.3f);
             GetComponent<BoxCollider2D>().offset = new Vector2(-4.5f, 0.82f);
             Invoke("ActivateNow", timeR);
         }
@@ -75,7 +75,7 @@ public class Rango : MonoBehaviour
 
     void ActivateNow()
     {
-        GetComponent<BoxCollider2D>().size = new Vector2(5f, 1.5f);
+        GetComponent<BoxCollider2D>().size = new Vector2(5f, 2.3f);
         GetComponent<BoxCollider2D>().offset = new Vector2(-3f, 0.82f);
     }
 
@@ -132,8 +132,8 @@ public class Rango : MonoBehaviour
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
-            GetComponent<Rigidbody2D>().velocity = -velocity;
+			Vector2 velocity = new Vector2 ((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
+			GetComponent<Rigidbody2D>().velocity = -velocity;
             caminar.SetBool("DentrodelRango", true);
         }
 

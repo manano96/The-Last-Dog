@@ -13,6 +13,8 @@ public class Caja : MonoBehaviour {
         Player = GameObject.FindGameObjectWithTag("Player");
 
         anim = Player.GetComponent<Animator>();
+
+		GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
     }
 	
 	// Update is called once per frame
