@@ -15,15 +15,13 @@ public class PlayerController : MonoBehaviour
     private bool jump;
     private bool movement = true;
     private SpriteRenderer spr;
-    private GameObject Enredadera;
+    //private GameObject Enredadera;
     private GameObject Player;
-    private float Trepar;
+    //private float Trepar;
 
     private GameObject barravida;
 
     public Vector3 respawnPoint;
-
-    private Enredadera enredadera;
 
 
     // Use this for initialization
@@ -37,10 +35,8 @@ public class PlayerController : MonoBehaviour
         barravida = GameObject.Find("barravida");
 
         respawnPoint = transform.position;
-        enredadera = GameObject.Find("Enredaderax").GetComponent<Enredadera>();
 
-        float xenred = Enredadera.transform.position.x;
-        float xplayer = Player.transform.position.x;
+        
 
 
     }
@@ -65,8 +61,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
-        Enredadera = GameObject.Find("Enredaderax");
+        //Enredadera = GameObject.Find("Enredadera");
         Player = GameObject.FindGameObjectWithTag("Player");
 
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
@@ -124,13 +121,41 @@ public class PlayerController : MonoBehaviour
             speed = 75f;
         }
 
-        Trepar = Vector2.Distance(Enredadera.transform.position, Player.transform.position);
+        //Trepar = Vector2.Distance(Enredadera.transform.position, Player.transform.position);
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && Trepar < 2.5f && Trepar > -2.5f)
+       /* if (Input.GetKeyDown(KeyCode.UpArrow) && Trepar <= 1.2)
         {
-            enredadera.enabled = true;
+            Player.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 6f);
+            anim.SetBool("Trepar", true);
+            anim.SetBool("Quieto", false);
+            Player.GetComponent<Rigidbody2D>().gravityScale = 0f;
         }
 
+
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && Trepar <= 1.2)
+        {
+            Player.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
+            anim.SetBool("Trepar", true);
+            anim.SetBool("Quieto", false);
+            Player.GetComponent<Rigidbody2D>().gravityScale = 0f;
+        }
+
+        else if (Input.GetKeyUp(KeyCode.UpArrow) && Trepar <= 1.2)
+        {
+            Player.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
+            anim.SetBool("Trepar", true);
+            anim.SetBool("Quieto", true);
+            Player.GetComponent<Rigidbody2D>().gravityScale = 0f;
+        }
+
+        else if (Trepar >= 1.2 )
+        {
+            anim.SetBool("Trepar", false);
+            anim.SetBool("Quieto", false);
+            Player.GetComponent<Rigidbody2D>().gravityScale = 1f;
+        }*/
+
+        
 
     }
 
@@ -212,14 +237,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Checkpoints") {
             respawnPoint = other.transform.position;
 
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Enredadera")
-        {
-            enredadera.enabled = false;
         }
     }
 

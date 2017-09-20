@@ -26,12 +26,7 @@ public class pinches : MonoBehaviour
 
         }
 
-        if (col.gameObject.tag == "Enemy")
-        {
-            col.SendMessageUpwards("Damage", 20);
-
-
-        }
     }
+
 }
 

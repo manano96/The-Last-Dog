@@ -70,7 +70,8 @@ public class Bebe : MonoBehaviour
         if (Input.GetKeyDown("x"))
         {
 
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            GetComponent<BoxCollider2D>().size = new Vector2(0f, 0f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0f);
             caminar.SetBool("Parali", true);
             bebe = false;
             Invoke("ActivateNow", timeR);
@@ -81,8 +82,8 @@ public class Bebe : MonoBehaviour
 
     void ActivateNow()
     {
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        GetComponent<BoxCollider2D>().size = new Vector2(5f, 2.3f);
+        GetComponent<BoxCollider2D>().offset = new Vector2(-3f, 0.82f);
         caminar.SetBool("Parali", false);
         bebe = true;
         
@@ -150,9 +151,23 @@ public class Bebe : MonoBehaviour
             caminar.SetBool("DentrodelRango", true);
         }
 
-    }  
+    }
 
-  
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
+            GetComponent<Rigidbody2D>().velocity = -velocity;
+            caminar.SetBool("DentrodelRango", true);
+        }
+
+    }
+
+
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
