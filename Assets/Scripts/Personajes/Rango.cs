@@ -17,6 +17,7 @@ public class Rango : MonoBehaviour
     private float Ladrar;
     private float Ataque1;
     private float Speed = 0.3f;
+    private SpriteRenderer spr;
 
     float timeR = 3f;
 
@@ -29,6 +30,7 @@ public class Rango : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        spr = GetComponent<SpriteRenderer>();
 
         curHealth = maxHealth;
 
@@ -117,6 +119,14 @@ public class Rango : MonoBehaviour
     public void Damage(int damage)
     {
         curHealth -= 25;
+
+        Invoke("Colore", 0.3f);
+
+        spr.color = Color.red;
+    }
+
+    void Colore() {
+        spr.color = Color.white;
     }
 
     void OnTriggerEnter2D(Collider2D other)

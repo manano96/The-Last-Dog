@@ -15,9 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool jump;
     private bool movement = true;
     private SpriteRenderer spr;
-    //private GameObject Enredadera;
     private GameObject Player;
-    //private float Trepar;
 
     private GameObject barravida;
 
@@ -61,9 +59,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
-        //Enredadera = GameObject.Find("Enredadera");
+       
         Player = GameObject.FindGameObjectWithTag("Player");
 
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
@@ -81,7 +77,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<BoxCollider2D>().offset = new Vector2(0.07f, 0.4666667f);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             maxSpeed = 5f;
             speed = 125f;
@@ -91,7 +87,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<BoxCollider2D>().size = new Vector2(1.06f, 0.9333333f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0.07f, 0.4666667f);
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             maxSpeed = 3f;
             speed = 75f;
@@ -120,40 +116,6 @@ public class PlayerController : MonoBehaviour
             maxSpeed = 3f;
             speed = 75f;
         }
-
-        //Trepar = Vector2.Distance(Enredadera.transform.position, Player.transform.position);
-
-       /* if (Input.GetKeyDown(KeyCode.UpArrow) && Trepar <= 1.2)
-        {
-            Player.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 6f);
-            anim.SetBool("Trepar", true);
-            anim.SetBool("Quieto", false);
-            Player.GetComponent<Rigidbody2D>().gravityScale = 0f;
-        }
-
-
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && Trepar <= 1.2)
-        {
-            Player.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
-            anim.SetBool("Trepar", true);
-            anim.SetBool("Quieto", false);
-            Player.GetComponent<Rigidbody2D>().gravityScale = 0f;
-        }
-
-        else if (Input.GetKeyUp(KeyCode.UpArrow) && Trepar <= 1.2)
-        {
-            Player.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
-            anim.SetBool("Trepar", true);
-            anim.SetBool("Quieto", true);
-            Player.GetComponent<Rigidbody2D>().gravityScale = 0f;
-        }
-
-        else if (Trepar >= 1.2 )
-        {
-            anim.SetBool("Trepar", false);
-            anim.SetBool("Quieto", false);
-            Player.GetComponent<Rigidbody2D>().gravityScale = 1f;
-        }*/
 
         
 
