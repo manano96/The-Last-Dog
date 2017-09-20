@@ -73,6 +73,8 @@ public class GameOver : MonoBehaviour {
 
             barravida.SetActive(true);
             barravida.SendMessage("NoDamage", 100);
+
+            //SceneManager.LoadScene("Escena2");
         }
     }
 }

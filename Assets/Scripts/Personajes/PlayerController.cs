@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
     public Vector3 respawnPoint;
 
 
+   /* void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }*/
+
     // Use this for initialization
     void Start()
     {
