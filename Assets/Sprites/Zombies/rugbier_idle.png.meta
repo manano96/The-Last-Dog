@@ -1,15 +1,11 @@
 fileFormatVersion: 2
-guid: 05ff0f77fc4a3e246b3b81731784312c
-timeCreated: 1505264926
+guid: fce66a2641a34074b88b14e75aab5ebd
+timeCreated: 1506025283
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Perro_caminata_sprite_sheet - copia_0
-    21300002: Perro_caminata_sprite_sheet - copia_1
-    21300004: Perro_caminata_sprite_sheet - copia_2
-    21300006: Perro_caminata_sprite_sheet - copia_3
-    21300008: Perro_caminata_sprite_sheet - copia_4
-    21300010: Perro_caminata_sprite_sheet - copia_5
+    21300000: rugbier_idle_0
+    21300002: rugbier_idle_1
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -51,7 +47,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 60
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -81,13 +77,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Perro_caminata_sprite_sheet - copia_0
+      name: rugbier_idle_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 439
-        width: 37
-        height: 72
+        x: 0
+        y: 0
+        width: 75
+        height: 94
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -95,69 +91,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Perro_caminata_sprite_sheet - copia_1
+      name: rugbier_idle_1
       rect:
         serializedVersion: 2
-        x: 23
-        y: 354
-        width: 37
-        height: 73
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Perro_caminata_sprite_sheet - copia_2
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 265
-        width: 40
-        height: 72
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Perro_caminata_sprite_sheet - copia_3
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 175
-        width: 39
-        height: 74
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Perro_caminata_sprite_sheet - copia_4
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 93
-        width: 37
-        height: 71
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Perro_caminata_sprite_sheet - copia_5
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 6
-        width: 34
-        height: 70
+        x: 75
+        y: 0
+        width: 75
+        height: 94
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

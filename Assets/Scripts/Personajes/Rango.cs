@@ -99,6 +99,8 @@ public class Rango : MonoBehaviour
         if (Ataque1 <= 1)
         {
             caminar.SetBool("Ataque", true);
+            caminar.SetBool("DentrodelRango", false);
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
 
             if (Time.time > nextAtack)
             {
@@ -150,10 +152,11 @@ public class Rango : MonoBehaviour
 
         if (other.tag == "Player")
         {
+
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
+            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, Enemy.transform.position.y * -8);
             GetComponent<Rigidbody2D>().velocity = -velocity;
             caminar.SetBool("DentrodelRango", true);
         }
@@ -163,8 +166,10 @@ public class Rango : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player") {
+
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+
             Vector2 velocity = new Vector2((transform.position.x - Enemy.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
 			caminar.SetBool("DentrodelRango", false);
       }
     }

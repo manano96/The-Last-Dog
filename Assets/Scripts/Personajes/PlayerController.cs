@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<BoxCollider2D>().offset = new Vector2(0.07f, 0.4666667f);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) | Input.GetKeyDown(KeyCode.LeftShift))
         {
             maxSpeed = 5f;
             speed = 125f;
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<BoxCollider2D>().size = new Vector2(1.06f, 0.9333333f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0.07f, 0.4666667f);
         }
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetKeyUp(KeyCode.LeftControl) | Input.GetKeyUp(KeyCode.LeftShift))
         {
             maxSpeed = 3f;
             speed = 75f;

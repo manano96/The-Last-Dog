@@ -10,6 +10,8 @@ public class barravida : MonoBehaviour {
     private GameObject Player;
     private GameObject Enemy;
     private GameObject Enemy2;
+    private GameObject Enemy3;
+
 
 
     public Image vida;
@@ -19,15 +21,21 @@ public class barravida : MonoBehaviour {
     private Animator anim;
     private Animator anim2;
     private Animator bebeanim;
+    private Animator rugbanim;
+
 
     private Rigidbody2D player;
     private Rigidbody2D enemy1;
     private Rigidbody2D bebe1;
+    private Rigidbody2D rugbier1;
+
 
     private PlayerController playercontroller;
     private Rango rango;
     private PlayerAttack playerattack;
     private Bebe bebe;
+    private Rugbier rugbier;
+
 
 
 
@@ -44,19 +52,27 @@ public class barravida : MonoBehaviour {
         Player = GameObject.FindGameObjectWithTag("Player");
         Enemy = GameObject.FindGameObjectWithTag("Enemy");
         Enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
+        Enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
+
 
         anim = Player.GetComponent<Animator>();
         anim2 = Enemy.GetComponent<Animator>();
         bebeanim = Enemy2.GetComponent<Animator>();
+        rugbanim = Enemy3.GetComponent<Animator>();
+
 
         player = Player.GetComponent<Rigidbody2D>();
         enemy1 = Enemy.GetComponent<Rigidbody2D>();
         bebe1 = Enemy2.GetComponent<Rigidbody2D>();
+        rugbier1 = Enemy3.GetComponent<Rigidbody2D>();
+
 
         playercontroller = GameObject.Find("Player").GetComponent<PlayerController>();
         rango = GameObject.Find("Zombie1").GetComponent<Rango>();
         playerattack = GameObject.Find("Player").GetComponent<PlayerAttack>();
         bebe = GameObject.Find("Bebe1").GetComponent<Bebe>();
+        rugbier = GameObject.Find("Rugbier1").GetComponent<Rugbier>();
+
 
     }
 
@@ -82,17 +98,27 @@ public class barravida : MonoBehaviour {
             bebeanim.SetBool("Ataque", false);
             bebeanim.SetBool("DentrodelRango", false);
 
+            rugbanim.SetBool("Ataque", false);
+            rugbanim.SetBool("DentrodelRango", false);
+
             playercontroller.enabled = false;
             rango.enabled = false;
             playerattack.enabled = false;
             bebe.enabled = false;
+            rugbier.enabled = false;
 
+            Enemy3.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            Enemy2.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            Enemy.gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
             enemy1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
             bebe1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
+            rugbier1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
 
 
         }

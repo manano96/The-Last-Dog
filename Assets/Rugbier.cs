@@ -2,48 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bebe : MonoBehaviour
-{
+public class Rugbier : MonoBehaviour {
 
-    public int curHealth;
-    public int maxHealth;
+    public int curHealth = 100;
+    public int maxHealth = 100;
 
     private Animator caminar;
+
 
     public GameObject Enemy;
     private GameObject Player;
     private float Ladrar;
-    private float Ataque;
+    private float Ataque1;
+    private float Ataque2;
+    private float Speed = 0.3f;
     private SpriteRenderer spr;
 
-    private bool bebe = true;
-
-    public float Speed;
-
-    float timeR = 3f;
+    float timeR = 4f;
 
     private GameObject barravida;
 
     public float atackRate = 0.5F;
     private float nextAtack = 0.0F;
 
+    private Rugbier2 rugbier;
+
     // Use this for initialization
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
+        spr = GetComponent<SpriteRenderer>();
+
         curHealth = maxHealth;
 
         barravida = GameObject.Find("barravida");
         caminar = Enemy.GetComponent<Animator>();
-        spr = GetComponent<SpriteRenderer>();
+
+        rugbier = GameObject.Find("Rugbier1").GetComponent<Rugbier2>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.GetComponent<BoxCollider2D>().enabled = bebe;
-
-        Player = GameObject.FindGameObjectWithTag("Player");
-
 
         if (curHealth <= 0)
         {
@@ -62,37 +62,44 @@ public class Bebe : MonoBehaviour
 
             GetComponent<BoxCollider2D>().size = new Vector2(0f, 0f);
 
-            transform.gameObject.tag = "Ground";
-
-
-
-            gameObject.GetComponent<Bebe>().enabled = false;
+            gameObject.GetComponent<Rugbier>().enabled = false;
         }
 
         if (Input.GetKeyDown("x"))
         {
-
-            GetComponent<BoxCollider2D>().size = new Vector2(0f, 0f);
-            GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0f);
-            caminar.SetBool("Parali", true);
-            bebe = false;
+            rugbier.enabled = true;
             Invoke("ActivateNow", timeR);
-            
         }
+
+
+        /*if (Input.GetKeyUp("x"))
+        {
+           
+
+            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
+            GetComponent<Rigidbody2D>().velocity = -velocity;
+
+            caminar.SetBool("Correr", true);
+
+            Speed = 1f;
+
+            if (Ataque2 <= 1.4)
+            {
+                Player.SendMessage("EnemyKnockBack", transform.position.x);
+            }
+
+            Invoke("ActivateNow", timeR);
+        }*/
 
     }
 
     void ActivateNow()
     {
-        GetComponent<BoxCollider2D>().size = new Vector2(5f, 2.3f);
-        GetComponent<BoxCollider2D>().offset = new Vector2(-3f, 0.82f);
-        caminar.SetBool("Parali", false);
-        bebe = true;
-        
+        rugbier.enabled = false;
 
+        Speed = 0.3f;
 
-
-
+        caminar.SetBool("Correr", false);
     }
 
 
@@ -112,16 +119,19 @@ public class Bebe : MonoBehaviour
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
-        Ataque = Vector2.Distance(Enemy.transform.position, Player.transform.position);
+        Ataque1 = Vector2.Distance(Enemy.transform.position, Player.transform.position);
+       
 
-        if (Ataque <= 1 && bebe == true)
+        if (Ataque1 <= 1.2)
         {
             caminar.SetBool("Ataque", true);
+            caminar.SetBool("DentrodelRango", false);
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
 
             if (Time.time > nextAtack)
             {
                 nextAtack = Time.time + atackRate;
-                barravida.SendMessage("TakeDamage", 5);
+                barravida.SendMessage("TakeDamage", 10);
             }
         }
         else
@@ -132,13 +142,11 @@ public class Bebe : MonoBehaviour
 
         }
 
-
-
     }
 
     public void Damage(int damage)
     {
-        curHealth -= 35;
+        curHealth -= 25;
 
         Invoke("Colore", 0.3f);
 
@@ -162,16 +170,20 @@ public class Bebe : MonoBehaviour
             caminar.SetBool("DentrodelRango", true);
         }
 
+
+
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
+
         if (other.tag == "Player")
         {
+
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
+            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, Enemy.transform.position.y * -8);
             GetComponent<Rigidbody2D>().velocity = -velocity;
             caminar.SetBool("DentrodelRango", true);
         }
@@ -183,8 +195,10 @@ public class Bebe : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+
             Vector2 velocity = new Vector2((transform.position.x - Enemy.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             caminar.SetBool("DentrodelRango", false);
         }
     }
