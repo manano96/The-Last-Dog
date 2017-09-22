@@ -67,7 +67,7 @@ public class Rugbier : MonoBehaviour {
 
         if (Input.GetKeyDown("x"))
         {
-            rugbier.enabled = true;
+            gameObject.AddComponent<Rugbier2>();
             Invoke("ActivateNow", timeR);
         }
 
@@ -95,7 +95,6 @@ public class Rugbier : MonoBehaviour {
 
     void ActivateNow()
     {
-        rugbier.enabled = false;
 
         Speed = 0.3f;
 

@@ -7,7 +7,7 @@ public class Rugbier2 : MonoBehaviour
 
     private Animator caminar;
 
-    public GameObject Enemy;
+    private GameObject Enemy;
     private GameObject Player;
     private float Ladrar;
     private float Ataque2;
@@ -20,7 +20,7 @@ public class Rugbier2 : MonoBehaviour
 
     private GameObject barravida;
 
-    public float atackRate = 0.5F;
+    public float atackRate = 0.1F;
     private float nextAtack = 0.0F;
 
     // Use this for initialization
@@ -30,6 +30,8 @@ public class Rugbier2 : MonoBehaviour
         spr = GetComponent<SpriteRenderer>();
 
         barravida = GameObject.Find("barravida");
+        Enemy = GameObject.Find("Rugbier1");
+
         caminar = Enemy.GetComponent<Animator>();
 
 
@@ -55,29 +57,31 @@ public class Rugbier2 : MonoBehaviour
 
 
 
-        Invoke("ActivateNow", 0);
+
+        Invoke("ActivateNow", 3);
     }
 
     void ActivateNow()
     {
-        if (Ataque2 <= 1.4)
+        rugbier.enabled = false;
+
+        Speed = 0.3f;
+
+        caminar.SetBool("Correr", false);
+
+        Destroy(GetComponent("Rugbier2"), 1);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
         {
             Player.SendMessage("EnemyKnockBack", transform.position.x);
-            if (Time.time > nextAtack)
-            {
-                nextAtack = Time.time + atackRate;
-                barravida.SendMessage("TakeDamage", 10);
-            }
-        }
-        else
-        {
-            caminar.SetBool("Ataque", false);
-
-            nextAtack = Time.time + atackRate;
 
         }
     }
 }
+
 
 
 
