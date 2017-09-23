@@ -10,7 +10,6 @@ public class Bebe : MonoBehaviour
 
     private Animator caminar;
 
-    public GameObject Enemy;
     private GameObject Player;
     private float Ladrar;
     private float Ataque;
@@ -31,9 +30,9 @@ public class Bebe : MonoBehaviour
     void Start()
     {
         curHealth = maxHealth;
-
+        Player = GameObject.FindGameObjectWithTag("Player");
         barravida = GameObject.Find("barravida");
-        caminar = Enemy.GetComponent<Animator>();
+        caminar = this.GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
     }
 
@@ -42,7 +41,7 @@ public class Bebe : MonoBehaviour
     {
         this.gameObject.GetComponent<BoxCollider2D>().enabled = bebe;
 
-        Player = GameObject.FindGameObjectWithTag("Player");
+        
 
 
         if (curHealth <= 0)
@@ -98,7 +97,7 @@ public class Bebe : MonoBehaviour
 
     void FixedUpdate()
     {
-        float xenemy = Enemy.transform.position.x;
+        float xenemy = this.transform.position.x;
         float xplayer = Player.transform.position.x;
 
 
@@ -112,7 +111,7 @@ public class Bebe : MonoBehaviour
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
-        Ataque = Vector2.Distance(Enemy.transform.position, Player.transform.position);
+        Ataque = Vector2.Distance(this.transform.position, Player.transform.position);
 
         if (Ataque <= 1 && bebe == true)
         {
@@ -157,7 +156,7 @@ public class Bebe : MonoBehaviour
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
+            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - this.transform.position.y) * Speed);
             GetComponent<Rigidbody2D>().velocity = -velocity;
             caminar.SetBool("DentrodelRango", true);
         }
@@ -171,7 +170,7 @@ public class Bebe : MonoBehaviour
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
+            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - this.transform.position.y) * Speed);
             GetComponent<Rigidbody2D>().velocity = -velocity;
             caminar.SetBool("DentrodelRango", true);
         }
@@ -183,7 +182,7 @@ public class Bebe : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Vector2 velocity = new Vector2((transform.position.x - Enemy.transform.position.x) * Speed, (transform.position.y - Enemy.transform.position.y) * Speed);
+            Vector2 velocity = new Vector2((transform.position.x - this.transform.position.x) * Speed, (transform.position.y - this.transform.position.y) * Speed);
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             caminar.SetBool("DentrodelRango", false);
         }
