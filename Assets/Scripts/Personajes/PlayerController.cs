@@ -15,17 +15,16 @@ public class PlayerController : MonoBehaviour
     private bool jump;
     private bool movement = true;
     private SpriteRenderer spr;
-    private GameObject Player;
 
     private GameObject barravida;
 
     public Vector3 respawnPoint;
 
 
-   /* void Awake()
+   void Awake()
     {
         DontDestroyOnLoad(gameObject);
-    }*/
+    }
 
     // Use this for initialization
     void Start()
@@ -35,7 +34,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
 
-        barravida = GameObject.Find("barravida");
+        
 
         respawnPoint = transform.position;
 
@@ -64,8 +63,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        Player = GameObject.FindGameObjectWithTag("Player");
+        barravida = GameObject.FindGameObjectWithTag("Vida");
 
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
         anim.SetBool("Grounded", grounded);

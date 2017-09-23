@@ -9,6 +9,8 @@ public class agujero : MonoBehaviour
     private float nextAtack = 0.0F;
 
     private GameObject enemy;
+    private GameObject enemy3;
+
 
     private GameObject barravida;
 
@@ -18,6 +20,8 @@ public class agujero : MonoBehaviour
 
         barravida = GameObject.Find("barravida");
         enemy = GameObject.FindGameObjectWithTag("Enemy");
+        enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
+
 
     }
 
@@ -39,7 +43,13 @@ public class agujero : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             col.SendMessageUpwards("Damage", 200);
-            Destroy(enemy);
+            
+
+        }
+
+        if (col.gameObject.tag == "Enemy3")
+        {
+            col.SendMessageUpwards("Damage", 100);
 
         }
     }

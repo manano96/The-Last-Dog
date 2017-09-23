@@ -40,11 +40,10 @@ public class GameOver : MonoBehaviour {
 
         player = Player.GetComponent<Animator>();
 
-        playercontroller = GameObject.Find("Player").GetComponent<PlayerController>();
+        playercontroller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         rango = GameObject.Find("Zombie1").GetComponent<Rango>();
-        playerattack = GameObject.Find("Player").GetComponent<PlayerAttack>();
+        playerattack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
         bebe = GameObject.Find("Bebe1").GetComponent<Bebe>();
-        rug = GameObject.Find("Rugbier1").GetComponent<Rugbier>();
 
 
         barravida.SetActive(true);
@@ -62,7 +61,6 @@ public class GameOver : MonoBehaviour {
             rango.enabled = true;
             playerattack.enabled = true;
             bebe.enabled = true;
-            rug.enabled = true;
 
             player.SetBool("Revivir", true);
             player.SetBool("Dead", false);
@@ -92,7 +90,7 @@ public class GameOver : MonoBehaviour {
             barravida.SetActive(true);
             barravida.SendMessage("NoDamage", 100);
 
-            //SceneManager.LoadScene("Escena2");
+            SceneManager.LoadScene("Escena2");
         }
     }
 }
