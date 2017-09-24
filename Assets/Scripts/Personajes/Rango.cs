@@ -95,7 +95,7 @@ public class Rango : MonoBehaviour
 
         Ataque1 = Vector2.Distance(this.transform.position, Player.transform.position);
 
-        if (Ataque1 <= 1)
+        if (Ataque1 <= 1.5)
         {
             caminar.SetBool("Ataque", true);
             caminar.SetBool("DentrodelRango", false);
