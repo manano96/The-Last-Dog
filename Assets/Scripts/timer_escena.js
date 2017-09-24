@@ -5,13 +5,11 @@ var Player : GameObject;
 
 function Update (){
     tiempo_start += Time.deltaTime;
-    if (tiempo_start>=tiempo_end || Input.GetKeyDown(KeyCode.Mouse0))
+    if (tiempo_start>=tiempo_end || Input.anyKey)
 	{
 
 		Instantiate(Player, new Vector2(-22.74f, -0.04f), Quaternion.identity);
         Application.LoadLevel(escena); 
     }
-
-
 
 }

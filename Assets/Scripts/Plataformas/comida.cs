@@ -22,7 +22,7 @@ public class comida : MonoBehaviour {
         if (col.gameObject.tag == "Player")
         {
 
-            barravida.SendMessage("NoDamage", 15);
+            barravida.SendMessage("NoDamage", 30);
             Destroy(gameObject);
         }
     }
