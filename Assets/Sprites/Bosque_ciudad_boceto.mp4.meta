@@ -7,13 +7,13 @@ VideoClipImporter:
   useLegacyImporter: 0
   quality: 0.5
   isColorLinear: 0
-  originalWidth: -1
-  originalHeight: -1
+  originalWidth: 1920
+  originalHeight: 1080
   frameRange: 0
   startFrame: -1
   endFrame: -1
-  frameCount: -1
-  frameRate: 0
+  frameCount: 274
+  frameRate: 29.970029830932617
   colorSpace: 0
   deinterlace: 0
   sourceFileSize: 7016321
@@ -22,28 +22,28 @@ VideoClipImporter:
   flipVertical: 0
   flipHorizontal: 0
   importAudio: 0
-  sourceAudioChannelCount: 
-  sourceAudioSampleRate: 
+  sourceAudioChannelCount: 0200
+  sourceAudioSampleRate: 80bb0000
   targetSettings: {}
   output:
-    format: 6
+    format: 1
     settings:
       enableTranscoding: 0
       codec: 0
       resizeFormat: 0
       aspectRatio: 0
-      customWidth: -1
-      customHeight: -1
+      customWidth: 1920
+      customHeight: 1080
       bitrateMode: 2
       spatialQuality: 2
-    encodedWidth: -1
-    encodedHeight: -1
-    encodedStartFrame: -1
-    encodedEndFrame: -1
+    encodedWidth: 1920
+    encodedHeight: 1080
+    encodedStartFrame: 0
+    encodedEndFrame: 274
     streamedResource:
       source: 
       offset: 0
-      size: 0
+      size: 7016321
   userData: 
   assetBundleName: 
   assetBundleVariant: 
