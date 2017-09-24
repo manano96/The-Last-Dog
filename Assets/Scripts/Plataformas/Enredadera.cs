@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enredadera : MonoBehaviour {
 
 
-    public float speed = 50f;
+    public float speed = 6f;
     private Animator anim;
 
     private GameObject[] enr;
