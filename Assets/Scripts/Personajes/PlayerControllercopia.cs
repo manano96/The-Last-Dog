@@ -38,7 +38,7 @@ public class PlayerControllercopia : MonoBehaviour
 
         respawnPoint = transform.position;
 
-        
+        anim.SetBool("Corriendo", true);
 
 
     }
@@ -122,9 +122,7 @@ public class PlayerControllercopia : MonoBehaviour
 
 
 
-		if (Input.anyKeyDown) {
-			anim.SetBool ("Corriendo", false);
-		}
+		
 
     }
 

@@ -14,10 +14,10 @@ public class Ganar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.anyKeyDown)
         {
 
-            SceneManager.LoadScene("Escena2");
+            SceneManager.LoadScene("MenuPpal");
             Time.timeScale = 1f;
         }
 

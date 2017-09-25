@@ -53,7 +53,7 @@ public class PlayerAttack : MonoBehaviour {
             }
             else{
                 attacking = false;
-                this.Player.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                GameObject.FindGameObjectWithTag("TAttack").GetComponent<BoxCollider2D>().enabled = false;
             }
 
         }
@@ -88,6 +88,6 @@ public class PlayerAttack : MonoBehaviour {
 
     void ActivateNow()
     {
-        this.Player.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        GameObject.FindGameObjectWithTag("TAttack").GetComponent<BoxCollider2D>().enabled = true;
     }
 }

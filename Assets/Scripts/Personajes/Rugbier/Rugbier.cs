@@ -41,6 +41,8 @@ public class Rugbier : MonoBehaviour {
         
 
         rugbier = GameObject.Find("Rugbier1").GetComponent<Rugbier2>();
+
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     // Update is called once per frame

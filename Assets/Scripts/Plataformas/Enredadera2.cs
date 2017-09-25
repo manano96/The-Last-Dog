@@ -27,6 +27,7 @@ public class Enredadera2 : MonoBehaviour {
             {
                 Enredadera.GetComponent<PolygonCollider2D>().enabled = true;
             }
+
         }
     }
 }
