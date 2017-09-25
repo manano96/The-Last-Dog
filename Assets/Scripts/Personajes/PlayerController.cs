@@ -15,16 +15,16 @@ public class PlayerController : MonoBehaviour
     private bool jump;
     private bool movement = true;
     private SpriteRenderer spr;
-    private GameObject Enredadera;
-    private GameObject Player;
-    private float Trepar;
 
     private GameObject barravida;
 
     public Vector3 respawnPoint;
 
-    private Enredadera enredadera;
 
+   void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Use this for initialization
     void Start()
@@ -34,13 +34,11 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
 
-        barravida = GameObject.Find("barravida");
+        
 
         respawnPoint = transform.position;
-        enredadera = GameObject.Find("Enredaderax").GetComponent<Enredadera>();
 
-        float xenred = Enredadera.transform.position.x;
-        float xplayer = Player.transform.position.x;
+        
 
 
     }
@@ -65,9 +63,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Enredadera = GameObject.Find("Enredaderax");
-        Player = GameObject.FindGameObjectWithTag("Player");
+        barravida = GameObject.FindGameObjectWithTag("Vida");
 
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
         anim.SetBool("Grounded", grounded);
@@ -84,7 +80,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<BoxCollider2D>().offset = new Vector2(0.07f, 0.4666667f);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftControl) | Input.GetKeyDown(KeyCode.LeftShift))
         {
             maxSpeed = 5f;
             speed = 125f;
@@ -94,7 +90,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<BoxCollider2D>().size = new Vector2(1.06f, 0.9333333f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0.07f, 0.4666667f);
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftControl) | Input.GetKeyUp(KeyCode.LeftShift))
         {
             maxSpeed = 3f;
             speed = 75f;
@@ -124,13 +120,7 @@ public class PlayerController : MonoBehaviour
             speed = 75f;
         }
 
-        Trepar = Vector2.Distance(Enredadera.transform.position, Player.transform.position);
-
-        if (Input.GetKeyDown(KeyCode.UpArrow) && Trepar < 2.5f && Trepar > -2.5f)
-        {
-            enredadera.enabled = true;
-        }
-
+        
 
     }
 
@@ -212,14 +202,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Checkpoints") {
             respawnPoint = other.transform.position;
 
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Enredadera")
-        {
-            enredadera.enabled = false;
         }
     }
 

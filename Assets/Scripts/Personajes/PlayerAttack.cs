@@ -16,6 +16,8 @@ public class PlayerAttack : MonoBehaviour {
 
     public AudioClip Ladrido;
 
+    float timeR = 0.4f;
+
     AudioSource fuenteAudio;
 
 
@@ -40,7 +42,7 @@ public class PlayerAttack : MonoBehaviour {
             attacking = true;
             attackTimer = attackCd;
 
-            this.Player.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            Invoke("ActivateNow", timeR);
         }
      
      if (attacking)
@@ -51,7 +53,7 @@ public class PlayerAttack : MonoBehaviour {
             }
             else{
                 attacking = false;
-                this.Player.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                GameObject.FindGameObjectWithTag("TAttack").GetComponent<BoxCollider2D>().enabled = false;
             }
 
         }
@@ -82,5 +84,10 @@ public class PlayerAttack : MonoBehaviour {
 
         anim.SetBool("Ladrido", ladrido);
 
+    }
+
+    void ActivateNow()
+    {
+        GameObject.FindGameObjectWithTag("TAttack").GetComponent<BoxCollider2D>().enabled = true;
     }
 }

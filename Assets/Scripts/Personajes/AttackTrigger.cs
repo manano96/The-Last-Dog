@@ -17,5 +17,10 @@ public class AttackTrigger : MonoBehaviour {
         {
             col.SendMessageUpwards("Damage", dmg);
         }
+
+        if (col.isTrigger != true && col.CompareTag("Enemy3"))
+        {
+            col.SendMessageUpwards("Damage", dmg);
+        }
     }
 }

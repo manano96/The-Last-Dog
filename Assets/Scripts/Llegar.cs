@@ -10,8 +10,8 @@ public class Llegar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,9 +22,10 @@ public class Llegar : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-			SceneManager.LoadScene(escena);
+            Destroy(GameObject.FindWithTag("Player"));
 
-            Time.timeScale = 0f;
+            SceneManager.LoadScene(escena);
+
         }
     }
 }
