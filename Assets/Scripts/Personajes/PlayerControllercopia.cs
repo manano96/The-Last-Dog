@@ -21,10 +21,10 @@ public class PlayerControllercopia : MonoBehaviour
     public Vector3 respawnPoint;
 
 
-   void Awake()
+   /*void Awake()
     {
         DontDestroyOnLoad(gameObject);
-    }
+    }*/
 
     // Use this for initialization
     void Start()

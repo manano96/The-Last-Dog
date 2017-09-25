@@ -89,7 +89,7 @@ public class GameOver2 : MonoBehaviour
 
 
 
-
+			Player.transform.position = Player.GetComponent<PlayerController>().respawnPoint;
 
             barravida.SetActive(true);
             barravida.SendMessage("NoDamage", 100);
