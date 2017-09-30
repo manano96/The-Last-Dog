@@ -16,6 +16,12 @@ public class MenuPpal : MonoBehaviour {
         
     }
 
+    public void BtnMute()
+    {
+        AudioListener.pause = !AudioListener.pause;
+    }
+
+ 
     public void BtnSalirJuego()
     {
         Application.Quit();
