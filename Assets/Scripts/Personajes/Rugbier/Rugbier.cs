@@ -168,7 +168,7 @@ public class Rugbier : MonoBehaviour {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, (transform.position.y - this.transform.position.y) * Speed);
+            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, this.transform.position.y);
             GetComponent<Rigidbody2D>().velocity = -velocity;
             caminar.SetBool("DentrodelRango", true);
         }
@@ -186,7 +186,7 @@ public class Rugbier : MonoBehaviour {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, this.transform.position.y * -8);
+            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, this.transform.position.y);
             GetComponent<Rigidbody2D>().velocity = -velocity;
             caminar.SetBool("DentrodelRango", true);
         }

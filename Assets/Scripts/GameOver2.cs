@@ -19,7 +19,7 @@ public class GameOver2 : MonoBehaviour
     private Rigidbody2D player1;
     private Rigidbody2D enemy1;
 
-    private PlayerControllercopia playercontroller;
+    private PlayerController playercontroller;
     private Rango rango;
     private PlayerAttack playerattack;
     private Bebe bebe;
@@ -42,7 +42,7 @@ public class GameOver2 : MonoBehaviour
 
         player = Player.GetComponent<Animator>();
 
-        playercontroller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllercopia>();
+        playercontroller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         rango = GameObject.Find("Zombie1").GetComponent<Rango>();
         playerattack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
         bebe = GameObject.Find("Bebe1").GetComponent<Bebe>();
@@ -94,7 +94,7 @@ public class GameOver2 : MonoBehaviour
             barravida.SetActive(true);
             barravida.SendMessage("NoDamage", 100);
 
-            SceneManager.LoadScene("level2");
+            SceneManager.LoadScene("nivel2");
         }
     }
 }
