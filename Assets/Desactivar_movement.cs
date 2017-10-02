@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class activar_movement : MonoBehaviour {
+public class Desactivar_movement : MonoBehaviour {
 
-    private GameObject Player;
 
     private SegumientoDEcamara camara1;
     private SegumientoDEcamara2 camara2;
@@ -17,7 +16,7 @@ public class activar_movement : MonoBehaviour {
     void Start()
     {
 
-        Player = GameObject.FindGameObjectWithTag("Player");
+
 
         camara1 = GameObject.Find("Main Camera").GetComponent<SegumientoDEcamara>();
         camara2 = GameObject.Find("Main Camera").GetComponent<SegumientoDEcamara2>();
@@ -39,14 +38,11 @@ public class activar_movement : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
 
-            Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            camara1.enabled = true;
+            camara2.enabled = false;
+            mono.enabled = false;
 
-            camara1.enabled = false;
-            camara2.enabled = true;
-            mono.enabled = true;
-
-            caminar.SetBool("Caminar", true);
+            caminar.SetBool("Caminar", false);
         }
     }
 }

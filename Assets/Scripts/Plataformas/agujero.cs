@@ -61,5 +61,13 @@ public class agujero : MonoBehaviour
             GameObject.FindGameObjectWithTag("Enemy3").SetActive(false);
 
         }
+
+        if (col.gameObject.tag == "MonoBoss")
+        {
+
+            col.gameObject.SetActive(false);
+
+
+        }
     }
 }
