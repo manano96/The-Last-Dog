@@ -97,7 +97,7 @@ public class Rango : MonoBehaviour
 
         Ataque1 = Vector2.Distance(this.transform.position, Player.transform.position);
 
-        if (Ataque1 <= 1.5)
+        if (Ataque1 <= 1)
         {
             caminar.SetBool("Ataque", true);
             caminar.SetBool("DentrodelRango", false);
@@ -139,7 +139,7 @@ public class Rango : MonoBehaviour
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-			Vector2 velocity = new Vector2 ((transform.position.x - Player.transform.position.x) * Speed,this.transform.position.y);
+			Vector2 velocity = new Vector2 ((transform.position.x - Player.transform.position.x) * Speed,this.transform.position.y * -6f );
 			GetComponent<Rigidbody2D>().velocity = -velocity;
             caminar.SetBool("DentrodelRango", true);
         }
@@ -157,7 +157,7 @@ public class Rango : MonoBehaviour
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, this.transform.position.y);
+			Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, this.transform.position.y * -6f);
             GetComponent<Rigidbody2D>().velocity = -velocity;
             caminar.SetBool("DentrodelRango", true);
         }
