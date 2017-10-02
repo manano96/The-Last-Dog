@@ -115,7 +115,7 @@ public class Bebe : MonoBehaviour
 
         Ataque = Vector2.Distance(this.transform.position, Player.transform.position);
 
-        if (Ataque <= 1 && bebe == true)
+        if (Ataque <= 1.5 && bebe == true)
         {
             caminar.SetBool("Ataque", true);
 
