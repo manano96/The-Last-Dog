@@ -38,5 +38,6 @@ public class PausarJuego : MonoBehaviour {
     public void BtnSalir(string volverMenuPpal)
         {
             SceneManager.LoadScene(volverMenuPpal);
+			Destroy(GameObject.FindWithTag("Player"));
         }
     }

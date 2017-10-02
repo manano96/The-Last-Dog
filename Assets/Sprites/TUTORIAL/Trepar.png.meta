@@ -1,9 +1,11 @@
 fileFormatVersion: 2
 guid: 151810f5934ac034580e8101ee74e6fd
-timeCreated: 1505705270
+timeCreated: 1506801523
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Trepar_0
+    21300002: Trepar_1
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -30,7 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -39,13 +41,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 70
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -63,10 +65,66 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline: []
+    sprites:
+    - serializedVersion: 2
+      name: Trepar_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 7
+        width: 189
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Trepar_1
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 7
+        width: 189
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -9.5, y: -84}
+      - {x: -9.5, y: 80}
+      - {x: -202.5, y: 80}
+      - {x: -202.5, y: -71}
+      - {x: -188.5, y: -90}
+      - {x: -171.5, y: -90}
+      - {x: -132.5, y: -72}
+      - {x: -108.5, y: -90}
+      - {x: -60.5, y: -90}
+    - - {x: 200.5, y: -79}
+      - {x: 201.5, y: -63}
+      - {x: 201.5, y: 80}
+      - {x: 8.5, y: 80}
+      - {x: 8.5, y: -43}
+      - {x: 9.5, y: -65}
+      - {x: 17.5, y: -90}
+      - {x: 57.5, y: -90}
+      - {x: 76.5, y: -84}
+      - {x: 101.5, y: -90}
+      - {x: 193.5, y: -90}
     physicsShape: []
   spritePackingTag: 
   userData: 

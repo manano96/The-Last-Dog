@@ -15,8 +15,8 @@ public class SegumientoDEcamara : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        float posX = follow.transform.position.x;
-        float posY = follow.transform.position.y + 1.5f;
+        float posX = follow.transform.position.x + 0.7f;
+        float posY = follow.transform.position.y - 1.5f;
 
         transform.position = new Vector3(
             Mathf.Clamp(posX, minCamPos.x, maxCamPos.x),

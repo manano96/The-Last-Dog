@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class agujero : MonoBehaviour
 {
-
-    public float atackRate = 0.5F;
-    private float nextAtack = 0.0F;
-
+    private GameObject saltarno;
     private GameObject enemy;
+    private GameObject enemy2;
     private GameObject enemy3;
+
 
 
     private GameObject barravida;
@@ -19,7 +18,9 @@ public class agujero : MonoBehaviour
     {
 
         barravida = GameObject.Find("barravida");
+        saltarno = GameObject.FindGameObjectWithTag("Tuto");
         enemy = GameObject.FindGameObjectWithTag("Enemy");
+        enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
         enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
 
 
@@ -42,14 +43,30 @@ public class agujero : MonoBehaviour
 
         if (col.gameObject.tag == "Enemy")
         {
-            col.SendMessageUpwards("Damage", 200);
-            
+            saltarno.GetComponent<BoxCollider2D>().enabled = false;
+
+            col.gameObject.SetActive(false);
+
+
+        }
+
+        if (col.gameObject.tag == "Enemy2")
+        {
+            GameObject.FindGameObjectWithTag("Enemy2").SetActive(false);
 
         }
 
         if (col.gameObject.tag == "Enemy3")
         {
-            col.SendMessageUpwards("Damage", 100);
+            GameObject.FindGameObjectWithTag("Enemy3").SetActive(false);
+
+        }
+
+        if (col.gameObject.tag == "MonoBoss")
+        {
+
+            col.gameObject.SetActive(false);
+
 
         }
     }

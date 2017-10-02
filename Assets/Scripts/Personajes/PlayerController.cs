@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool jump;
     private bool movement = true;
     private SpriteRenderer spr;
+    private Color normal;
 
     private GameObject barravida;
 
@@ -34,7 +35,9 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
 
-        
+        normal = spr.color;
+
+
 
         respawnPoint = transform.position;
 
@@ -195,7 +198,7 @@ public class PlayerController : MonoBehaviour
     void EnableMovement()
     {
         movement = true;
-        spr.color = Color.white;
+        spr.color = normal;
     }
 
     void OnTriggerEnter2D(Collider2D other) {
