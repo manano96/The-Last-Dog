@@ -204,6 +204,9 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Checkpoints") {
             respawnPoint = other.transform.position;
+            GameControl.nivel++;
+            PlayerPrefs.SetFloat("PlayerX", transform.position.x);
+            PlayerPrefs.SetFloat("PlayerY", transform.position.y);
 
         }
     }
