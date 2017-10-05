@@ -25,7 +25,7 @@ public class Llegar : MonoBehaviour {
             Destroy(GameObject.FindWithTag("Player"));
 
             SceneManager.LoadScene(escena);
-
+            GameControl.nivel++;
         }
     }
 }

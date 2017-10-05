@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour {
     public static GameControl control;
     public static int nivel;
-
+    public static int check;
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this);
