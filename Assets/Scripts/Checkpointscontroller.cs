@@ -23,6 +23,7 @@ public class Checkpointscontroller : MonoBehaviour {
 		if(other.tag == "Player"){
 			checkpointSpriteRenderer.sprite = greenFlag;	
 			checkpointReached = true;
-		}
+            GetComponent<CircleCollider2D>().enabled = false;
+        }
 	}
 }
