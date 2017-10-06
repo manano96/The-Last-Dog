@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 respawnPoint;
 
+	public bool trepando;
 
    void Awake()
     {
@@ -53,6 +54,8 @@ public class PlayerController : MonoBehaviour
             grounded = true;
         }
 
+
+
     }
 
     void OnCollisionExit2D(Collision2D col)
@@ -62,6 +65,36 @@ public class PlayerController : MonoBehaviour
             grounded = false;
         }
     }
+		
+
+
+
+	void OnTriggerExit(Collision2D col){
+		if (col.gameObject.tag == "Enredadera")
+		{
+			trepando = false;
+		}
+	}
+
+
+
+	void OnTriggerStay2D(Collider2D other){
+
+		if (Input.GetKey (KeyCode.UpArrow) && other.tag == "Enredadera") {
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0f, 1f);
+			anim.SetBool ("Trepar", true);
+			anim.SetBool ("Quieto", false);
+			GetComponent<Rigidbody2D> ().gravityScale = 0f;
+
+			trepando = true;
+
+		}
+
+	}
+
+
+
+
 
     // Update is called once per frame
     void Update()
@@ -122,8 +155,33 @@ public class PlayerController : MonoBehaviour
             maxSpeed = 3f;
             speed = 75f;
         }
+			
+			
 
-        
+		if (Input.GetKey(KeyCode.DownArrow) && trepando)
+		{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -1f);
+			anim.SetBool("Trepar", true);
+			anim.SetBool("Quieto", false);
+			GetComponent<Rigidbody2D>().gravityScale = 0f;
+		}
+
+		else if (Input.GetKey(KeyCode.RightArrow) && trepando )
+		{
+
+			anim.SetBool("Costado", true);
+			anim.SetBool("Trepar", true);
+			anim.SetBool("Quieto", false);
+
+		}
+		else if (Input.GetKey(KeyCode.LeftArrow) && trepando )
+		{
+
+			anim.SetBool("Costado", true);
+			anim.SetBool("Trepar", true);
+			anim.SetBool("Quieto", false);
+
+		}
 
     }
 
@@ -212,49 +270,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-	void OnTriggerStay2D(Collider2D other){
-		
-		if (Input.GetKey(KeyCode.UpArrow) && other.tag == "Enredadera")
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 1f);
-			anim.SetBool("Trepar", true);
-			anim.SetBool("Quieto", false);
-			GetComponent<Rigidbody2D>().gravityScale = 0f;
-		}
 
-		else if (Input.GetKey(KeyCode.DownArrow) && other.tag == "Enredadera")
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -1f);
-			anim.SetBool("Trepar", true);
-			anim.SetBool("Quieto", false);
-			GetComponent<Rigidbody2D>().gravityScale = 0f;
-		}
-		else if(Input.GetKeyUp(KeyCode.DownArrow) && other.tag == "Enredadera" || Input.GetKeyUp(KeyCode.UpArrow) && other.tag == "Enredadera")
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
-			anim.SetBool("Trepar", true);
-			anim.SetBool("Quieto", true);
-			anim.SetBool("Costado", false);
-			GetComponent<Rigidbody2D>().gravityScale = 0f;
-		}
-		else if (Input.GetKey(KeyCode.RightArrow) && other.tag == "Enredadera" && !grounded )
-		{
 
-			anim.SetBool("Costado", true);
-			anim.SetBool("Trepar", true);
-			anim.SetBool("Quieto", false);
 
-		}
-		else if (Input.GetKey(KeyCode.LeftArrow) && other.tag == "Enredadera" && !grounded )
-		{
+			
 
-			anim.SetBool("Costado", true);
-			anim.SetBool("Trepar", true);
-			anim.SetBool("Quieto", false);
 
-		}
-
-}
 	void OnTriggerExit2D(Collider2D other){
 
 		if (other.tag == "Enredadera"){	
@@ -262,6 +283,7 @@ public class PlayerController : MonoBehaviour
 			anim.SetBool ("Quieto", false);
 			anim.SetBool ("Costado", false);
 			GetComponent<Rigidbody2D>().gravityScale = 1f;
+			trepando = false;
 
 
 	}
