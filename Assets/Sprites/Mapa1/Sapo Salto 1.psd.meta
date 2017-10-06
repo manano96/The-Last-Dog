@@ -1,17 +1,16 @@
 fileFormatVersion: 2
-guid: 0a8a154e400f05845a0d91d1a853e96a
-timeCreated: 1507257230
+guid: 08044c98ad8f0a44d9add7df510c35a7
+timeCreated: 1507263898
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: zombie_jefe_sapo_ataque_lengua_sprite_sheet_0
-    21300002: zombie_jefe_sapo_ataque_lengua_sprite_sheet_1
-    21300004: zombie_jefe_sapo_ataque_lengua_sprite_sheet_2
-    21300006: zombie_jefe_sapo_ataque_lengua_sprite_sheet_3
-    21300008: zombie_jefe_sapo_ataque_lengua_sprite_sheet_4
-    21300010: zombie_jefe_sapo_ataque_lengua_sprite_sheet_5
-    21300012: zombie_jefe_sapo_ataque_lengua_sprite_sheet_6
-    21300014: zombie_jefe_sapo_ataque_lengua_sprite_sheet_7
+    21300000: Sapo Salto 1_0
+    21300002: Sapo Salto 1_2
+    21300004: Sapo Salto 1_3
+    21300006: Sapo Salto 1_4
+    21300008: Sapo Salto 1_6
+    21300010: Sapo Salto 1_7
+    21300012: Sapo Salto 1_9
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -83,113 +82,99 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zombie_jefe_sapo_ataque_lengua_sprite_sheet_0
+      name: Sapo Salto 1_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 9
+        x: 450
+        y: 13
+        width: 46
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sapo Salto 1_2
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 10
         width: 71
         height: 67
-      alignment: 9
-      pivot: {x: 0.9061447, y: 0.035751443}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_jefe_sapo_ataque_lengua_sprite_sheet_1
+      name: Sapo Salto 1_3
       rect:
         serializedVersion: 2
-        x: 122
-        y: 11
-        width: 70
-        height: 75
-      alignment: 9
-      pivot: {x: 0.7921794, y: 0.008598658}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: zombie_jefe_sapo_ataque_lengua_sprite_sheet_2
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 11
-        width: 42
-        height: 75
-      alignment: 9
-      pivot: {x: 0.6535474, y: 0.008598658}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: zombie_jefe_sapo_ataque_lengua_sprite_sheet_3
-      rect:
-        serializedVersion: 2
-        x: 254
-        y: 11
+        x: 123
+        y: 18
         width: 68
-        height: 60
-      alignment: 9
-      pivot: {x: 0.9037404, y: 0.009212843}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: zombie_jefe_sapo_ataque_lengua_sprite_sheet_4
-      rect:
-        serializedVersion: 2
-        x: 329
-        y: 11
-        width: 101
         height: 59
-      alignment: 9
-      pivot: {x: 0.9341905, y: 0.009368993}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_jefe_sapo_ataque_lengua_sprite_sheet_5
+      name: Sapo Salto 1_4
       rect:
         serializedVersion: 2
-        x: 435
-        y: 11
-        width: 163
-        height: 58
-      alignment: 9
-      pivot: {x: 0.96064353, y: 0.0095305275}
+        x: 207
+        y: 16
+        width: 70
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_jefe_sapo_ataque_lengua_sprite_sheet_6
+      name: Sapo Salto 1_6
       rect:
         serializedVersion: 2
-        x: 603
-        y: 11
-        width: 205
-        height: 59
-      alignment: 9
-      pivot: {x: 0.9678339, y: 0.009368993}
+        x: 296
+        y: 13
+        width: 56
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_jefe_sapo_ataque_lengua_sprite_sheet_7
+      name: Sapo Salto 1_7
       rect:
         serializedVersion: 2
-        x: 812
-        y: 11
-        width: 233
-        height: 60
-      alignment: 9
-      pivot: {x: 0.97131926, y: 0.010748323}
+        x: 371
+        y: 13
+        width: 56
+        height: 199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sapo Salto 1_9
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 13
+        width: 24
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

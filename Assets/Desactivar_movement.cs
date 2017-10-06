@@ -43,6 +43,8 @@ public class Desactivar_movement : MonoBehaviour {
             mono.enabled = false;
 
             caminar.SetBool("Caminar", false);
+            caminar.SetBool("Caer", true);
+
         }
     }
 }

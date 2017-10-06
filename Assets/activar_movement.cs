@@ -34,19 +34,24 @@ public class activar_movement : MonoBehaviour {
 
     }
 
+    void Movimiento() {
+
+        Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        camara1.enabled = false;
+        camara2.enabled = true;
+        mono.enabled = true;
+
+        caminar.SetBool("Caminar", true);
+    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
         {
 
-            Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-
-            camara1.enabled = false;
-            camara2.enabled = true;
-            mono.enabled = true;
-
-            caminar.SetBool("Caminar", true);
+            Invoke("Movimiento", 1f);
         }
     }
 }

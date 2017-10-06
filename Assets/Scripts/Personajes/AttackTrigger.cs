@@ -22,5 +22,10 @@ public class AttackTrigger : MonoBehaviour {
         {
             col.SendMessageUpwards("Damage", dmg);
         }
+
+        if (col.isTrigger != true && col.CompareTag("Sapo Boss"))
+        {
+            col.SendMessageUpwards("Damage", dmg);
+        }
     }
 }

@@ -1,9 +1,12 @@
 fileFormatVersion: 2
-guid: 79fb86f2319496d47b756365266bf1aa
-timeCreated: 1506923517
+guid: 288b627b158d42545b444cc157a3c879
+timeCreated: 1507277032
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: monofall_0
+    21300002: monofall_1
+    21300004: monofall_2
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -45,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 30
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -73,7 +76,49 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: monofall_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 7
+        width: 92
+        height: 94
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: monofall_1
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 4
+        width: 94
+        height: 97
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: monofall_2
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 14
+        width: 97
+        height: 110
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
