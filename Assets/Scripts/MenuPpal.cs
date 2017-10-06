@@ -30,19 +30,19 @@ public class MenuPpal : MonoBehaviour {
     public void BtnContinuar() {
 
       
-        if (GameControl.check != 0 && GameControl.check < 3 && GameControl.nivel <= 1)
+        if (GameControl.check != 0 && GameControl.check <= 2 | GameControl.nivel == 0)
         {
             SceneManager.LoadScene("Escena2");
             Instantiate(Player, transform.position, Quaternion.identity);
             Time.timeScale = 1;
         }
-        if (GameControl.check >= 3 && GameControl.check < 6 && GameControl.nivel == 2)
+        if (GameControl.check >= 3 && GameControl.check <= 4 | GameControl.nivel == 1)
         {
             SceneManager.LoadScene("nivel2");
             Instantiate(Player, transform.position, Quaternion.identity);
             Time.timeScale = 1;
         }
-        if (GameControl.check >= 6 && GameControl.check < 9 && GameControl.nivel == 3)
+        if (GameControl.check >= 5 && GameControl.check < 7 | GameControl.nivel == 2)
         {
             SceneManager.LoadScene("Escena2");
             Instantiate(Player, transform.position, Quaternion.identity);
