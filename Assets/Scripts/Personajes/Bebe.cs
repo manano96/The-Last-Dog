@@ -185,7 +185,7 @@ public class Bebe : MonoBehaviour
         if (other.tag == "Player")
         {
             Vector2 velocity = new Vector2((transform.position.x - this.transform.position.x) * Speed, this.transform.position.y);
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            
             caminar.SetBool("DentrodelRango", false);
         }
     }
