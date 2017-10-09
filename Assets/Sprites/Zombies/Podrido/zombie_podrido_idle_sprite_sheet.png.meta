@@ -1,9 +1,17 @@
 fileFormatVersion: 2
 guid: 7577330c76d14154a8f4b02e519abc7d
-timeCreated: 1506843322
+timeCreated: 1507492638
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: zombie_podrido_idle_sprite_sheet_0
+    21300002: zombie_podrido_idle_sprite_sheet_1
+    21300004: zombie_podrido_idle_sprite_sheet_2
+    21300006: zombie_podrido_idle_sprite_sheet_3
+    21300008: zombie_podrido_idle_sprite_sheet_4
+    21300010: zombie_podrido_idle_sprite_sheet_5
+    21300012: zombie_podrido_idle_sprite_sheet_6
+    21300014: zombie_podrido_idle_sprite_sheet_7
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -39,13 +47,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 48
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -63,9 +71,137 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: zombie_podrido_idle_sprite_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 11
+        width: 57
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_idle_sprite_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 11
+        width: 57
+        height: 73
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_idle_sprite_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 11
+        width: 57
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_idle_sprite_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 11
+        width: 57
+        height: 73
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_idle_sprite_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 11
+        width: 57
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_idle_sprite_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 11
+        width: 57
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_idle_sprite_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 11
+        width: 57
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_idle_sprite_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 11
+        width: 57
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

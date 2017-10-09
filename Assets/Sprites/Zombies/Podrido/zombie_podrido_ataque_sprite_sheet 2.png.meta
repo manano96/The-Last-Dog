@@ -1,23 +1,19 @@
 fileFormatVersion: 2
-guid: 4cac9901247f4ab45b156b739d9d6b22
-timeCreated: 1507492650
+guid: c837a410662314b45b8011ad96dbb4eb
+timeCreated: 1507524600
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: zombie_podrido_muerte_sprite_sheet_0
-    21300002: zombie_podrido_muerte_sprite_sheet_1
-    21300004: zombie_podrido_muerte_sprite_sheet_2
-    21300006: zombie_podrido_muerte_sprite_sheet_3
-    21300008: zombie_podrido_muerte_sprite_sheet_4
-    21300010: zombie_podrido_muerte_sprite_sheet_5
-    21300012: zombie_podrido_muerte_sprite_sheet_6
-    21300014: zombie_podrido_muerte_sprite_sheet_7
-    21300016: zombie_podrido_muerte_sprite_sheet_8
-    21300018: zombie_podrido_muerte_sprite_sheet_9
-    21300020: zombie_podrido_muerte_sprite_sheet_10
-    21300022: zombie_podrido_muerte_sprite_sheet_11
-    21300024: zombie_podrido_muerte_sprite_sheet_12
-    21300026: zombie_podrido_muerte_sprite_sheet_13
+    21300000: zombie_podrido_ataque_sprite_sheet 2_0
+    21300002: zombie_podrido_ataque_sprite_sheet 2_1
+    21300004: zombie_podrido_ataque_sprite_sheet 2_2
+    21300006: zombie_podrido_ataque_sprite_sheet 2_3
+    21300008: zombie_podrido_ataque_sprite_sheet 2_4
+    21300010: zombie_podrido_ataque_sprite_sheet 2_5
+    21300012: zombie_podrido_ataque_sprite_sheet 2_6
+    21300014: zombie_podrido_ataque_sprite_sheet 2_7
+    21300016: zombie_podrido_ataque_sprite_sheet 2_8
+    21300018: zombie_podrido_ataque_sprite_sheet 2_9
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -97,197 +93,141 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_0
+      name: zombie_podrido_ataque_sprite_sheet 2_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 3
+        x: 96
+        y: 173
         width: 57
         height: 74
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.62048364, y: 0.03597466}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_1
+      name: zombie_podrido_ataque_sprite_sheet 2_1
       rect:
         serializedVersion: 2
-        x: 130
-        y: 3
-        width: 57
-        height: 74
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 167
+        y: 173
+        width: 55
+        height: 85
+      alignment: 9
+      pivot: {x: 0.36126098, y: 0.019718485}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_2
+      name: zombie_podrido_ataque_sprite_sheet 2_2
       rect:
         serializedVersion: 2
-        x: 193
-        y: 3
-        width: 57
-        height: 74
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 257
+        y: 173
+        width: 40
+        height: 82
+      alignment: 9
+      pivot: {x: 0.04216156, y: 0.016105652}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_3
+      name: zombie_podrido_ataque_sprite_sheet 2_3
       rect:
         serializedVersion: 2
-        x: 256
-        y: 3
-        width: 57
-        height: 74
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 334
+        y: 173
+        width: 40
+        height: 82
+      alignment: 9
+      pivot: {x: 0.03262329, y: 0.0068000234}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_4
+      name: zombie_podrido_ataque_sprite_sheet 2_4
       rect:
         serializedVersion: 2
-        x: 318
-        y: 3
-        width: 58
-        height: 72
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 416
+        y: 173
+        width: 40
+        height: 82
+      alignment: 9
+      pivot: {x: 0.036434937, y: 0.02179197}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_5
+      name: zombie_podrido_ataque_sprite_sheet 2_5
       rect:
         serializedVersion: 2
-        x: 381
-        y: 3
-        width: 60
-        height: 69
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 480
+        y: 173
+        width: 67
+        height: 82
+      alignment: 9
+      pivot: {x: 0.30490977, y: 0.025498925}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_6
+      name: zombie_podrido_ataque_sprite_sheet 2_6
       rect:
         serializedVersion: 2
-        x: 446
-        y: 3
-        width: 62
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 571
+        y: 173
+        width: 56
+        height: 79
+      alignment: 9
+      pivot: {x: 0.36972374, y: 0.026718913}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_7
+      name: zombie_podrido_ataque_sprite_sheet 2_7
       rect:
         serializedVersion: 2
-        x: 513
-        y: 3
-        width: 62
-        height: 57
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 99
+        y: 47
+        width: 65
+        height: 79
+      alignment: 9
+      pivot: {x: 0.4532344, y: 0.022871427}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_8
+      name: zombie_podrido_ataque_sprite_sheet 2_8
       rect:
         serializedVersion: 2
-        x: 580
-        y: 3
-        width: 62
-        height: 53
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 276
+        y: 48
+        width: 75
+        height: 79
+      alignment: 9
+      pivot: {x: 0.52837116, y: 0.022871235}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_9
+      name: zombie_podrido_ataque_sprite_sheet 2_9
       rect:
         serializedVersion: 2
-        x: 647
-        y: 3
-        width: 62
-        height: 43
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_10
-      rect:
-        serializedVersion: 2
-        x: 714
-        y: 3
-        width: 62
-        height: 36
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_11
-      rect:
-        serializedVersion: 2
-        x: 781
-        y: 3
-        width: 62
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_12
-      rect:
-        serializedVersion: 2
-        x: 848
-        y: 3
-        width: 62
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: zombie_podrido_muerte_sprite_sheet_13
-      rect:
-        serializedVersion: 2
-        x: 915
-        y: 3
-        width: 129
-        height: 8
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 375
+        y: 46
+        width: 112
+        height: 81
+      alignment: 9
+      pivot: {x: 0.6845575, y: 0.049663592}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
