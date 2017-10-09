@@ -71,7 +71,7 @@ public class PlayerAttack : MonoBehaviour {
 			fuenteAudio.clip = Ladrido;
 			fuenteAudio.Play();
 
-			Invoke("ActivateNow", timeR);
+			//Invoke("ActivateNow", timeR);
 		}
 
 
@@ -83,7 +83,7 @@ public class PlayerAttack : MonoBehaviour {
 			fuenteAudio.clip = Ladrido;
 			fuenteAudio.Play();
 
-			Invoke("ActivateNow", timeR);
+			//Invoke("ActivateNow", timeR);
 
 		}
 

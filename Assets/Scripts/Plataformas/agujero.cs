@@ -52,13 +52,13 @@ public class agujero : MonoBehaviour
 
         if (col.gameObject.tag == "Enemy2")
         {
-            GameObject.FindGameObjectWithTag("Enemy2").SetActive(false);
+            col.gameObject.SetActive(false);
 
         }
 
         if (col.gameObject.tag == "Enemy3")
         {
-            GameObject.FindGameObjectWithTag("Enemy3").SetActive(false);
+            col.gameObject.SetActive(false);
 
         }
 

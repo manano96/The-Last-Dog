@@ -10,7 +10,7 @@ public class Rugbier2 : MonoBehaviour
     private Animator caminar;
 
     private GameObject Player;
-    private float Speed = 1f;
+    private float Speed = 0.1f;
     private SpriteRenderer spr;
 
     private Rugbier2 rugbier;
@@ -35,7 +35,7 @@ public class Rugbier2 : MonoBehaviour
     {
         caminar.SetBool("Correr", true);
 
-        Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, this.transform.position.y * -10);
+        Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, this.transform.position.y * -10 );
         GetComponent<Rigidbody2D>().velocity = -velocity;
 
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;

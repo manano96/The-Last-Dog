@@ -94,6 +94,13 @@ public class barravidaboss : MonoBehaviour {
             camara2.enabled = false;
 
             Player.GetComponent<Sapo_Controller>().enabled = false;
+            Player.GetComponent<Sapo_Controller2>().enabled = false;
+            GameObject.FindGameObjectWithTag("Lengua").GetComponent<ataque_lengua>().enabled = false;
+            GameObject.FindGameObjectWithTag("Lengua").SetActive(false);
+            GameObject.Find("Collider_Sapo2").SetActive(false);
+            GameObject.Find("Collider_Sapo1").SetActive(false);
+
+
 
             gameObject.SetActive(false);
         }
