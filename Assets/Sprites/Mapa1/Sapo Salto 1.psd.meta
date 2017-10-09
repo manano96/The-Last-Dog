@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 08044c98ad8f0a44d9add7df510c35a7
-timeCreated: 1507263898
+timeCreated: 1507527697
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,8 @@ TextureImporter:
     21300008: Sapo Salto 1_6
     21300010: Sapo Salto 1_7
     21300012: Sapo Salto 1_9
+    21300014: Sapo Salto 1_5
+    21300016: Sapo Salto 1_8
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -82,20 +84,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sapo Salto 1_0
-      rect:
-        serializedVersion: 2
-        x: 450
-        y: 13
-        width: 46
-        height: 320
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
       name: Sapo Salto 1_2
       rect:
         serializedVersion: 2
@@ -103,8 +91,8 @@ TextureImporter:
         y: 10
         width: 71
         height: 67
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.9041119, y: 0.035429712}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -117,8 +105,8 @@ TextureImporter:
         y: 18
         width: 68
         height: 59
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.7549856, y: 0.026239427}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,8 +119,22 @@ TextureImporter:
         y: 16
         width: 70
         height: 51
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.7255842, y: 0.0708295}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sapo Salto 1_5
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 19
+        width: 46
+        height: 63
+      alignment: 9
+      pivot: {x: 0.83654916, y: 0.0016383519}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,7 +146,7 @@ TextureImporter:
         x: 296
         y: 13
         width: 56
-        height: 69
+        height: 4
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,9 +160,23 @@ TextureImporter:
         x: 371
         y: 13
         width: 56
-        height: 199
+        height: 4
       alignment: 7
       pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sapo Salto 1_8
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 13
+        width: 24
+        height: 4
+      alignment: 9
+      pivot: {x: 0.7064107, y: 0.077848434}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,8 +189,8 @@ TextureImporter:
         y: 13
         width: 24
         height: 4
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.70657855, y: 0.06934333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

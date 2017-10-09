@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3a80ba141c262954f9c5296278b1acdd
-timeCreated: 1507264167
+timeCreated: 1507519016
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,7 @@ TextureImporter:
     21300006: Sapo Salto 2_5
     21300008: Sapo Salto 2_6
     21300010: Sapo Salto 2_7
+    21300012: Sapo Salto 2_0
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -81,6 +82,20 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: Sapo Salto 2_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 177
+        width: 46
+        height: 53
+      alignment: 9
+      pivot: {x: 0.9988798, y: -0.00019980376}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
       name: Sapo Salto 2_2
       rect:
         serializedVersion: 2
@@ -88,8 +103,8 @@ TextureImporter:
         y: 10
         width: 109
         height: 59
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.61229014, y: 0.05266584}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -102,8 +117,8 @@ TextureImporter:
         y: 10
         width: 105
         height: 53
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.6142465, y: 0.074340135}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -116,8 +131,8 @@ TextureImporter:
         y: 10
         width: 86
         height: 53
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.6242264, y: 0.068383634}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -130,8 +145,8 @@ TextureImporter:
         y: 12
         width: 70
         height: 51
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.7254168, y: 0.06053382}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,10 +155,10 @@ TextureImporter:
       name: Sapo Salto 2_6
       rect:
         serializedVersion: 2
-        x: 20
+        x: 21
         y: 12
-        width: 47
-        height: 218
+        width: 46
+        height: 4
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +169,10 @@ TextureImporter:
       name: Sapo Salto 2_7
       rect:
         serializedVersion: 2
-        x: 93
+        x: 94
         y: 12
-        width: 47
-        height: 74
+        width: 46
+        height: 4
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

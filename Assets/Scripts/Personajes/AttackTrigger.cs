@@ -6,6 +6,8 @@ public class AttackTrigger : MonoBehaviour {
 
     public int dmg = 20;
 
+    private GameObject barravida;
+
     void OnTriggerEnter2D(Collider2D col)
     {
       if(col.isTrigger != true && col.CompareTag("Enemy"))
@@ -23,8 +25,10 @@ public class AttackTrigger : MonoBehaviour {
             col.SendMessageUpwards("Damage", dmg);
         }
 
-        if (col.isTrigger != true && col.CompareTag("Sapo Boss"))
+        if (col.isTrigger != true && col.CompareTag("parar"))
         {
+            barravida = GameObject.Find("VidaSapo");
+            barravida.SendMessage("TakeDamage", 10);
             col.SendMessageUpwards("Damage", dmg);
         }
     }

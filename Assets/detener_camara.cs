@@ -7,11 +7,17 @@ public class detener_camara : MonoBehaviour {
     private SegumientoDEcamara camara1;
     private SegumientoDEcamara2 camara2;
 
+    private GameObject perder;
+
+
     // Use this for initialization
     void Start() {
         camara1 = GameObject.Find("Main Camera").GetComponent<SegumientoDEcamara>();
         camara2 = GameObject.Find("Main Camera").GetComponent<SegumientoDEcamara2>();
-        
+
+        perder = GameObject.Find("VidaSapo");
+        perder.SetActive(false);
+
     }
 	
 	// Update is called once per frame
@@ -27,6 +33,8 @@ public class detener_camara : MonoBehaviour {
             camara1.enabled = false;
 
             camara2.enabled = true;
+
+            perder.SetActive(true);
 
         }
     }

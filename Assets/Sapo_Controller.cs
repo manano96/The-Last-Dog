@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Sapo_Controller : MonoBehaviour {
 
-    public int curHealth = 100;
-    public int maxHealth = 100;
-
     private Animator caminar;
 
 
@@ -17,16 +14,16 @@ public class Sapo_Controller : MonoBehaviour {
     private SpriteRenderer spr;
     private Color normal;
 
-    private SegumientoDEcamara camara1;
-    private SegumientoDEcamara2 camara2;
-
     private ataque_lengua barr;
+
+    public bool ataqueleng = true;
+
 
 
     float timeR = 3f;
 
     private GameObject barravida;
-    private GameObject basura;
+
 
 
     public float atackRate = 0.5F;
@@ -41,17 +38,13 @@ public class Sapo_Controller : MonoBehaviour {
         spr = GetComponent<SpriteRenderer>();
         normal = spr.color;
 
-        curHealth = maxHealth;
-
         barravida = GameObject.Find("barravida");
-        basura = GameObject.FindGameObjectWithTag("basura");
 
         caminar = this.GetComponent<Animator>();
 
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation ;
+        
 
-        camara1 = GameObject.Find("Main Camera").GetComponent<SegumientoDEcamara>();
-        camara2 = GameObject.Find("Main Camera").GetComponent<SegumientoDEcamara2>();
+
         barr = GameObject.FindGameObjectWithTag("Lengua").GetComponent<ataque_lengua>();
 
 
@@ -60,27 +53,9 @@ public class Sapo_Controller : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        caminar.SetBool("Caida", false);
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 
-        if (curHealth <= 0)
-        {
-
-            //caminar.SetBool("Muerte", true);
-            //caminar.SetBool("Ataque", false);
-            //caminar.SetBool("DentrodelRango", false);
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CapsuleCollider2D>().enabled = false;
-
-            basura.GetComponent<BoxCollider2D>().enabled = false;
-
-            camara1.enabled = true;
-
-            camara2.enabled = false;
-
-            gameObject.GetComponent<Sapo_Controller>().enabled = false;
-        }
     }
 
 
@@ -102,29 +77,18 @@ public class Sapo_Controller : MonoBehaviour {
 
         Ataque1 = Vector2.Distance(this.transform.position, Player.transform.position);
 
-        if (Ataque1 <= 1)
+        if (Ataque1 <= 5 && ataqueleng)
         {
+           
+                Invoke("Lengua", 0f);
             
 
-            if (Time.time > nextAtack)
-            {
-                nextAtack = Time.time + atackRate;
-                barravida.SendMessage("TakeDamage", 10);
-            }
-        }
-        else
-        {
-            caminar.SetBool("Ataque", false);
 
-            nextAtack = Time.time + atackRate;
 
-        }
-
-    }
+        }}
 
     public void Damage(int damage)
     {
-        curHealth -= 10;
 
         Invoke("Colore", 0.3f);
 
@@ -137,46 +101,32 @@ public class Sapo_Controller : MonoBehaviour {
     }
 
     void Lengua() {
+
+        ataqueleng = false;
+
+        GameObject.FindGameObjectWithTag("Lengua").GetComponent<ataque_lengua>().ataquelengua = true;
+        Invoke("Lengua1", 1f);
+
+    }
+
+    void Lengua1(){
+
         lengua.GetComponent<BoxCollider2D>().enabled = true;
 
         barr.enabled = true;
 
-        GetComponent<BoxCollider2D>().enabled = false;
-
-
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            Invoke("Lengua", 1f);
-
-
-
-        }
-
-
+        GetComponent<Sapo_Controller>().enabled = false;
 
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D col)
     {
-
-        if (other.tag == "Player")
+        if(col.gameObject.tag == "Player" && transform.position.y > 0f)
         {
-
-           
+            
+                Player.SendMessage("EnemyKnockBack", transform.position.x);
+            
         }
     }
 
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-
-           
-        }
-    }
 }

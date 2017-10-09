@@ -7,6 +7,8 @@ public class ataque_lengua : MonoBehaviour {
     public Animator caminar;
     public GameObject sapo;
 
+    public bool ataquelengua = true;
+
     private GameObject barravida;
 
     // Use this for initialization
@@ -14,50 +16,37 @@ public class ataque_lengua : MonoBehaviour {
 
         barravida = GameObject.Find("barravida");
 
-        caminar.SetBool("Ataque1", true);
 
-        Invoke("Lengua1", 0.6f);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
+
+        if (ataquelengua)
+        {
+            caminar.SetBool("Ataque1", true);
+
+            Invoke("Lengua", 0f);
+        }
+    }
+
+
+    void Lengua()
+    {
+
+        Invoke("Lengua1", 0.6f);
     }
 
     void Lengua1() {
 
+        ataquelengua =  false;
+
         GetComponent<BoxCollider2D>().offset = new Vector2(-1.06f, 0.8445259f);
         GetComponent<BoxCollider2D>().size = new Vector2(0.3500824f, 0.1643929f);
 
-        Invoke("Lengua2",0.01f);
+        Invoke("Lengua5",0.01f);
     }
 
-    void Lengua2()
-    {
-
-        GetComponent<BoxCollider2D>().offset = new Vector2(-1.383649f, 0.8445259f);
-        GetComponent<BoxCollider2D>().size = new Vector2(0.9973807f, 0.1643929f);
-
-        Invoke("Lengua3", 0.05f);
-    }
-
-    void Lengua3()
-    {
-
-        GetComponent<BoxCollider2D>().offset = new Vector2(-2.008512f, 0.8092775f);
-        GetComponent<BoxCollider2D>().size = new Vector2(2.247106f, 0.09389615f);
-
-        Invoke("Lengua4", 0.06f);
-    }
-
-    void Lengua4()
-    {
-
-        GetComponent<BoxCollider2D>().offset = new Vector2(-2.415471f, 0.8092775f);
-        GetComponent<BoxCollider2D>().size = new Vector2(3.061025f, 0.09389615f);
-
-        Invoke("Lengua5", 0.07f);
-    }
 
     void Lengua5()
     {
@@ -75,14 +64,33 @@ public class ataque_lengua : MonoBehaviour {
         GetComponent<BoxCollider2D>().offset = new Vector2(-1.06f, 0.8445259f);
         GetComponent<BoxCollider2D>().size = new Vector2(0.3500824f, 0.1643929f);
 
-        sapo.GetComponent<BoxCollider2D>().enabled = true;
+        sapo.GetComponent<Sapo_Controller>().enabled = false;
+        
 
         GetComponent<BoxCollider2D>().enabled = false;
 
-        GetComponent<ataque_lengua>().enabled = true;
+        GetComponent<ataque_lengua>().enabled = false;
 
-        this.gameObject.SetActive(false);
-    
+        ataquelengua = false;
+
+        Invoke("Salto", 1.2f);
+
+    }
+
+
+    void Salto()
+    {
+        caminar.SetBool("Salto1", true);
+        Invoke("Salto2", 0.23f);
+    }
+
+    void Salto2()
+    {
+        GameObject.Find("Collider_Sapo2").GetComponent<CapsuleCollider2D>().enabled = false;
+        GameObject.FindGameObjectWithTag("Sapo Boss").GetComponent<Sapo_Controller2>().caida = true;
+        GameObject.FindGameObjectWithTag("Sapo Boss").GetComponent<Sapo_Controller2>().onetime = true;
+
+        sapo.GetComponent<Sapo_Controller2>().enabled = true;
     }
 
 
