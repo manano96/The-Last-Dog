@@ -37,7 +37,7 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 
-	void OnTriggerStay(Collider2D col){
+	/*void OnTriggerStay(Collider2D col){
 		if (col.tag == "Enemy3") {
 			trigger = true;
 		}
@@ -47,7 +47,7 @@ public class PlayerAttack : MonoBehaviour {
 		if (col.tag == "Enemy3") {
 			trigger = false;
 		}
-	}
+	}*/
 
 
 	void Update()
