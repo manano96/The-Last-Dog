@@ -97,11 +97,20 @@ public class Rango : MonoBehaviour
 
         Ataque1 = Vector2.Distance(this.transform.position, Player.transform.position);
 
+        if (Ataque1 <= 2.3f)
+        {
+            
+            GetComponent<BoxCollider2D>().enabled = true;
+
+           
+        }
+
         if (Ataque1 <= 1)
         {
             caminar.SetBool("Ataque", true);
             caminar.SetBool("DentrodelRango", false);
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+            GetComponent<BoxCollider2D>().enabled = true;
 
             if (Time.time > nextAtack)
             {

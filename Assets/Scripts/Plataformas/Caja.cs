@@ -32,6 +32,8 @@ public class Caja : MonoBehaviour {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
         }
+
+       
     }
 
     void OnTriggerExit2D(Collider2D coll)
@@ -40,6 +42,95 @@ public class Caja : MonoBehaviour {
         {
 
             anim.SetBool("Empujar", false);
+
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+
+
+
+        }
+
+       
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        
+
+        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Enemy2")
+        {
+
+            anim.SetBool("Empujar", false);
+
+            coll.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            coll.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            coll.gameObject.GetComponent<Animator>().SetBool("DentrodelRango", false);
+
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+
+
+
+        }
+
+        if (coll.gameObject.tag == "Enemy3")
+        {
+
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+
+
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Enemy2")
+        {
+
+            anim.SetBool("Empujar", false);
+
+            coll.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            coll.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            coll.gameObject.GetComponent<Animator>().SetBool("DentrodelRango", false);
+
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+
+
+
+        }
+
+        if (coll.gameObject.tag == "Enemy3")
+        {
+
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+
+
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        
+
+        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Enemy2")
+        {
+            coll.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            coll.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            coll.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            coll.gameObject.GetComponent<Animator>().SetBool("DentrodelRango", true);
+
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+
+
+        }
+
+        if (coll.gameObject.tag == "Enemy3")
+        {
 
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
 

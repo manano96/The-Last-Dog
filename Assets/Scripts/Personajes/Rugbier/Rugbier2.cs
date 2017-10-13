@@ -10,7 +10,8 @@ public class Rugbier2 : MonoBehaviour
     private Animator caminar;
 
     private GameObject Player;
-    private float Speed = 0.1f;
+    private float Ataque1;
+    private float Speed = 1f;
     private SpriteRenderer spr;
 
     private Rugbier2 rugbier;
@@ -33,16 +34,23 @@ public class Rugbier2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        caminar.SetBool("Correr", true);
 
-        Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, this.transform.position.y * -10 );
-        GetComponent<Rigidbody2D>().velocity = -velocity;
+        Ataque1 = Vector2.Distance(this.transform.position, Player.transform.position);
 
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        if (Ataque1 <= 15)
+        {
+            caminar.SetBool("Correr", true);
 
-        GetComponent<BoxCollider2D>().size = new Vector2(8f, 2.3f);
-        GetComponent<BoxCollider2D>().offset = new Vector2(-5f, 1.223348f);
+            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x - Time.deltaTime) * Speed, this.transform.position.y * -10);
+            GetComponent<Rigidbody2D>().velocity = -velocity;
+
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            GetComponent<BoxCollider2D>().size = new Vector2(8f, 2.3f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(-5f, 1.223348f);
+        }
+        
 
 
         float xenemy = this.transform.position.x;

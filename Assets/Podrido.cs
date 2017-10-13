@@ -41,7 +41,7 @@ public class Podrido : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		this.gameObject.GetComponent<BoxCollider2D>().enabled = podrido;
+		podrido = this.gameObject.GetComponent<BoxCollider2D>();
 
 
 
@@ -94,11 +94,25 @@ public class Podrido : MonoBehaviour
 
 		Ataque = Vector2.Distance(this.transform.position, Player.transform.position);
 
-		if (Ataque <= 1.5 && podrido == true)
+        if (Ataque <= 2.3f)
+        {
+
+            podrido = true;
+
+            GetComponent<BoxCollider2D>().enabled = true;
+
+
+
+        }
+
+        if (Ataque <= 1.5 && podrido == true)
 		{
 			caminar.SetBool("Ataque", true);
 
-			if (Time.time > nextAtack)
+
+            
+
+            if (Time.time > nextAtack)
 			{
 				nextAtack = Time.time + atackRate;
 				barravida.SendMessage("TakeDamage", 5);

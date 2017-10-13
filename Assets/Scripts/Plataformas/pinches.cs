@@ -28,5 +28,17 @@ public class pinches : MonoBehaviour
 
     }
 
+
+     void OnCollisionStay2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Enemy2" || coll.gameObject.tag == "Enemy3")
+        {
+
+            coll.gameObject.SendMessage("Damage", 100f);
+
+
+        }
+    }
+
 }
 
