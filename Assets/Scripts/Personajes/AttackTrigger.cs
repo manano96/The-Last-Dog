@@ -20,7 +20,7 @@ public class AttackTrigger : MonoBehaviour {
             col.SendMessageUpwards("Damage", dmg);
         }
 
-        if (col.CompareTag("Enemy3"))
+        if (col.CompareTag("Enemy3") || col.CompareTag("Enemy4"))
         {
             col.SendMessageUpwards("Damage", dmg);
         }

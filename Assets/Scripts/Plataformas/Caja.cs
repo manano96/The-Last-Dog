@@ -56,7 +56,7 @@ public class Caja : MonoBehaviour {
     {
         
 
-        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Enemy2")
+        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Enemy2" || coll.gameObject.tag == "Enemy4")
         {
 
             anim.SetBool("Empujar", false);
@@ -84,7 +84,7 @@ public class Caja : MonoBehaviour {
 
     void OnCollisionStay2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Enemy2")
+        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Enemy2" || coll.gameObject.tag == "Enemy4")
         {
 
             anim.SetBool("Empujar", false);
@@ -114,7 +114,7 @@ public class Caja : MonoBehaviour {
     {
         
 
-        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Enemy2")
+        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Enemy2" || coll.gameObject.tag == "Enemy4")
         {
             coll.gameObject.GetComponent<BoxCollider2D>().enabled = true;
             coll.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
