@@ -75,6 +75,9 @@ public class Bebe : MonoBehaviour
 
             GetComponent<BoxCollider2D>().size = new Vector2(0f, 0f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0f);
+
+			GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
+
             caminar.SetBool("Parali", true);
             bebe = false;
             Invoke("ActivateNow", timeR);

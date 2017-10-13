@@ -36,7 +36,7 @@ public class barravida : MonoBehaviour {
     private Bebe bebe;
     private Rugbier rugbier;
 
-
+	private Color spr;
 
 
     float hp, maxHp = 100f;
@@ -64,7 +64,7 @@ public class barravida : MonoBehaviour {
         playercontroller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         playerattack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
 
-
+		spr = Player.GetComponent<SpriteRenderer>().color;
 
 
     }
@@ -74,6 +74,9 @@ public class barravida : MonoBehaviour {
         hp = Mathf.Clamp(hp - amount, 0f, maxHp);
         vida.transform.localScale = new Vector2(hp/maxHp, 1);
 
+		Invoke("Colore", 0.3f);
+
+		Player.GetComponent<SpriteRenderer>().color = Color.red;
 
         if (vida.transform.localScale.x == 0)
 
@@ -146,4 +149,9 @@ public class barravida : MonoBehaviour {
         vida.transform.localScale = new Vector2(hp / maxHp, 1);
 
     }
+
+	void Colore()
+	{
+		Player.GetComponent<SpriteRenderer>().color = spr;
+	}
 }
