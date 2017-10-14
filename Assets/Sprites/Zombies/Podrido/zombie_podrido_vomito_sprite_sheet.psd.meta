@@ -1,12 +1,14 @@
 fileFormatVersion: 2
-guid: d8933e401c039ae498076ba55000db89
-timeCreated: 1507943730
+guid: b2988fa9f0a5a804c9d8c985fe2df7ae
+timeCreated: 1507943480
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: zombie_podrido_vomito_sprite_sheet_0
-    21300002: zombie_podrido_vomito_sprite_sheet_1
-    21300004: zombie_podrido_vomito_sprite_sheet_2
+    21300002: zombie_podrido_vomito_sprite_sheet_2
+    21300004: zombie_podrido_vomito_sprite_sheet_5
+    21300006: zombie_podrido_vomito_sprite_sheet_7
+    21300008: zombie_podrido_vomito_sprite_sheet_9
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -61,7 +63,7 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -69,15 +71,7 @@ TextureImporter:
   - buildTarget: Standalone
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,26 +83,12 @@ TextureImporter:
       name: zombie_podrido_vomito_sprite_sheet_0
       rect:
         serializedVersion: 2
-        x: 249
-        y: 48
+        x: 23
+        y: 265
         width: 62
         height: 9
       alignment: 9
-      pivot: {x: 0.0010065879, y: 0.48980033}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: zombie_podrido_vomito_sprite_sheet_1
-      rect:
-        serializedVersion: 2
-        x: 323
-        y: 48
-        width: 62
-        height: 9
-      alignment: 9
-      pivot: {x: -0.00028597924, y: 0.5076116}
+      pivot: {x: -0.0005168915, y: 0.4937473}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -117,12 +97,54 @@ TextureImporter:
       name: zombie_podrido_vomito_sprite_sheet_2
       rect:
         serializedVersion: 2
-        x: 398
-        y: 48
-        width: 62
-        height: 9
+        x: 23
+        y: 168
+        width: 39
+        height: 24
       alignment: 9
-      pivot: {x: 0.0010065879, y: 0.49870598}
+      pivot: {x: 0.0011274386, y: 0.5429471}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_vomito_sprite_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 116
+        width: 23
+        height: 29
+      alignment: 9
+      pivot: {x: 0.006546435, y: 0.5522519}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_vomito_sprite_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 75
+        width: 15
+        height: 34
+      alignment: 9
+      pivot: {x: 0.0059743244, y: 0.53336334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_vomito_sprite_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 20
+        width: 21
+        height: 40
+      alignment: 9
+      pivot: {x: 0.0021510352, y: 0.55568725}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

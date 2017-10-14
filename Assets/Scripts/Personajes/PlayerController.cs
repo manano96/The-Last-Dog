@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 5f;
     public float speed = 2f;
     public bool grounded;
-    public float jumpPower = 6f;
+    private float jumpPower = 7.3f;
 
     private Rigidbody2D rb2d;
     private Animator anim;
@@ -186,6 +186,9 @@ public class PlayerController : MonoBehaviour
         if (jump)
         {
             rb2d.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            
+
+
             jump = false;
         }
 
@@ -199,13 +202,33 @@ public class PlayerController : MonoBehaviour
 
     public void EnemyKnockBack(float enemyPosx)
     {
+        float h = Input.GetAxis("Horizontal");
+        if (!movement) h = 0;
         barravida.SendMessage("TakeDamage", 15);
 
         jump = true;
 
         float side = Mathf.Sign(enemyPosx - transform.position.x);
 
-        rb2d.AddForce(Vector2.left * side * jumpPower);
+
+        if (h > 0.1f)
+        {
+            rb2d.AddForce(Vector2.left * jumpPower, ForceMode2D.Impulse);
+        }
+
+        if (h == 0f)
+        {
+            rb2d.AddForce(Vector2.left * jumpPower, ForceMode2D.Impulse);
+        }
+
+        if (h < -0.1f)
+        {
+            rb2d.AddForce(Vector2.right * jumpPower, ForceMode2D.Impulse);
+            
+        }
+        
+
+
 
         movement = false;
         Invoke("EnableMovement", 0.8f);

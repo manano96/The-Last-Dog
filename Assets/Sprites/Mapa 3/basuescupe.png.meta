@@ -1,12 +1,14 @@
 fileFormatVersion: 2
-guid: d8933e401c039ae498076ba55000db89
-timeCreated: 1507943730
+guid: 54e5f1e64d8dc634784fadeeb32773e5
+timeCreated: 1507930655
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: zombie_podrido_vomito_sprite_sheet_0
-    21300002: zombie_podrido_vomito_sprite_sheet_1
-    21300004: zombie_podrido_vomito_sprite_sheet_2
+    21300000: basuescupe_0
+    21300002: basuescupe_1
+    21300004: basuescupe_2
+    21300006: basuescupe_3
+    21300008: basuescupe_4
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -48,7 +50,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 48
+  spritePixelsToUnits: 40
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -61,7 +63,7 @@ TextureImporter:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -69,15 +71,7 @@ TextureImporter:
   - buildTarget: Standalone
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -86,43 +80,71 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zombie_podrido_vomito_sprite_sheet_0
+      name: basuescupe_0
       rect:
         serializedVersion: 2
-        x: 249
-        y: 48
-        width: 62
-        height: 9
-      alignment: 9
-      pivot: {x: 0.0010065879, y: 0.48980033}
+        x: 8
+        y: 130
+        width: 66
+        height: 83
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_podrido_vomito_sprite_sheet_1
+      name: basuescupe_1
       rect:
         serializedVersion: 2
-        x: 323
-        y: 48
-        width: 62
-        height: 9
-      alignment: 9
-      pivot: {x: -0.00028597924, y: 0.5076116}
+        x: 93
+        y: 130
+        width: 66
+        height: 83
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: zombie_podrido_vomito_sprite_sheet_2
+      name: basuescupe_2
       rect:
         serializedVersion: 2
-        x: 398
-        y: 48
-        width: 62
-        height: 9
-      alignment: 9
-      pivot: {x: 0.0010065879, y: 0.49870598}
+        x: 174
+        y: 130
+        width: 66
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: basuescupe_3
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 36
+        width: 66
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: basuescupe_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 36
+        width: 66
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
