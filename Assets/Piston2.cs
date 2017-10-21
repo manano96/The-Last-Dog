@@ -2,35 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Piston : MonoBehaviour {
-
+public class Piston2 : MonoBehaviour {
     private GameObject barravida;
 
     private bool activar = true;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
         barravida = GameObject.Find("barravida");
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (activar)
         {
-            Invoke("Piston1", 0f);
+            Invoke("Cerrar", 0f);
         }
-	}
-
-    void Piston1() {
-
-        activar = false;
-        GetComponent<Animator>().SetBool("Andar", true);
-        GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0f);
-        Invoke("Piston2", 0.45f);
     }
 
-    void Piston2()
+    void Piston1()
+    {
+
+        
+        GetComponent<Animator>().SetBool("Andar", true);
+        GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0f);
+        Invoke("Piston20", 0.45f);
+    }
+
+    void Piston20()
     {
 
         GetComponent<BoxCollider2D>().offset = new Vector2(0f, -2.13f);
@@ -41,11 +43,12 @@ public class Piston : MonoBehaviour {
     {
 
         GetComponent<BoxCollider2D>().offset = new Vector2(0f, -2.13f);
-        Invoke("Cerrar", 0.15f);
+        activar = true;
     }
 
     void Cerrar()
     {
+        activar = false;
         GetComponent<Animator>().SetBool("Andar", false);
         GetComponent<Animator>().SetBool("Cerrar", true);
 
@@ -55,9 +58,11 @@ public class Piston : MonoBehaviour {
 
     void Cerrar2()
     {
+        
         GetComponent<Animator>().SetBool("Andar", false);
         GetComponent<Animator>().SetBool("Cerrar", false);
-        activar = true;
+        Invoke("Piston1", 0.15f);
+
     }
 
     void Cerrar3()
@@ -87,7 +92,7 @@ public class Piston : MonoBehaviour {
 
             coll.gameObject.SendMessage("EnemyKnockBack", transform.position.x);
 
-            
+
             Invoke("Cerrar3", 1f);
 
         }
