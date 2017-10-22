@@ -269,6 +269,9 @@ public class PlayerController : MonoBehaviour
             GetComponent<BoxCollider2D>().size = new Vector2(0.3706665f, 0.9825717f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0.004348755f, 0.688238f);
 
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+
         }
         else if (Input.GetKeyUp(KeyCode.UpArrow) && other.tag == "Enredadera")
         {
@@ -321,7 +324,8 @@ public class PlayerController : MonoBehaviour
 
             GetComponent<BoxCollider2D>().size = new Vector2(1.06f, 0.9333333f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0.07f, 0.4666667f);
-
+           AudioSource audio = GetComponent<AudioSource>();
+            audio.Pause();
         }
 }
 
