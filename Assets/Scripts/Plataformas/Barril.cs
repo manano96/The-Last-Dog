@@ -27,14 +27,20 @@ public class Barril : MonoBehaviour {
         }
     }
 
-        void OnTriggerExit2D(Collider2D collision)
+        void OnTriggerExit2D(Collider2D other)
     {
-        CancelInvoke("Gotitacayendo");
+
+        if (other.tag == "Player")
+        {
+            CancelInvoke("Gotitacayendo");
+
+        }
+        
     }
 
     void Gotitacayendo() {
 
 
-        Instantiate(Gotdo, new Vector2(29.56f, 2.56f), Quaternion.identity);
+        Instantiate(Gotdo, new Vector2(this.transform.position.x - 0.4f , this.transform.position.y - 0.7f), Quaternion.identity);
     }
 }

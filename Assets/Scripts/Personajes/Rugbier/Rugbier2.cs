@@ -35,13 +35,16 @@ public class Rugbier2 : MonoBehaviour
     void Update()
     {
 
+        float xenemy = this.transform.position.x;
+        float xplayer = Player.transform.position.x;
+
         Ataque1 = Vector2.Distance(this.transform.position, Player.transform.position);
 
         if (Ataque1 <= 15)
         {
             caminar.SetBool("Correr", true);
 
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x - Time.deltaTime) * Speed, this.transform.position.y * -10);
+            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x - Time.deltaTime) * Speed, this.transform.position.y);
             GetComponent<Rigidbody2D>().velocity = -velocity;
 
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
@@ -53,8 +56,7 @@ public class Rugbier2 : MonoBehaviour
         
 
 
-        float xenemy = this.transform.position.x;
-        float xplayer = Player.transform.position.x;
+        
 
 
         if (xenemy >= xplayer)

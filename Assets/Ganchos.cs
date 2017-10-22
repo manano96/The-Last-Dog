@@ -23,7 +23,7 @@ public class Ganchos : MonoBehaviour
 
         if (coll.gameObject.tag == "Player")
         {
-            Invoke("Caida", 1f);
+            Invoke("Caida", 0.5f);
         }
     }
 

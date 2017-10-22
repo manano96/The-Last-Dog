@@ -19,9 +19,9 @@ public class Gota : MonoBehaviour {
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             barravida.SendMessage("TakeDamage", 15);
             anim.SetBool("Choque", true);
@@ -29,7 +29,22 @@ public class Gota : MonoBehaviour {
 
         }
 
-        if (other.tag == "Ground")
+        if (other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.SendMessage("Damage", 25f);
+            anim.SetBool("Choque", true);
+            Destroy(this.gameObject, Destroygota);
+
+        }
+
+        if (other.gameObject.tag == "Ground")
+        {
+            anim.SetBool("Choque", true);
+            Destroy(this.gameObject, Destroygota);
+
+        }
+
+        if (other.gameObject.tag == "Untagged")
         {
             anim.SetBool("Choque", true);
             Destroy(this.gameObject, Destroygota);
