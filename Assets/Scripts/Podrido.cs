@@ -9,8 +9,16 @@ public class Podrido : MonoBehaviour
 	public int maxHealth;
 
 	private Animator caminar;
+	private Animator vomito;
+
+	public GameObject shot;
+	public Transform ShotSpawn;
+	public float delay;
+	public float fireRate;
+
 
 	private GameObject Player;
+	private GameObject Vo;
 	private float Ladrar;
 	private float Ataque;
 	private SpriteRenderer spr;
@@ -34,8 +42,10 @@ public class Podrido : MonoBehaviour
 		Player = GameObject.FindGameObjectWithTag("Player");
 		barravida = GameObject.Find("barravida");
 		caminar = this.GetComponent<Animator>();
+		vomito = shot.GetComponent<Animator>();
 		spr = GetComponent<SpriteRenderer>();
 		normal = spr.color;
+
 	}
 
 	// Update is called once per frame
@@ -108,6 +118,8 @@ public class Podrido : MonoBehaviour
         if (Ataque <= 1.5 && podrido == true)
 		{
 			caminar.SetBool("Ataque", true);
+			vomito.SetBool("escupir", true);
+
 
 
             
@@ -170,9 +182,21 @@ public class Podrido : MonoBehaviour
 			Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * Speed, this.transform.position.y);
 			GetComponent<Rigidbody2D>().velocity = -velocity;
 			caminar.SetBool("DentrodelRango", true);
+			caminar.SetBool("Ataque", true);
+
+			vomito.SetBool("escupir", true);
+
+			InvokeRepeating ("Fire", delay, fireRate);
+
+			podrido = true;
 		}
 
 	}
+
+	void Fire(){
+		Instantiate (shot, new Vector3(ShotSpawn.position.x, 1.105071f, ShotSpawn.position.z), ShotSpawn.rotation);
+	} 
+
 
 
 	void OnTriggerExit2D(Collider2D other)
@@ -182,6 +206,19 @@ public class Podrido : MonoBehaviour
 			Vector2 velocity = new Vector2((transform.position.x - this.transform.position.x) * Speed, this.transform.position.y);
 			GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 			caminar.SetBool("DentrodelRango", false);
+			caminar.SetBool("Ataque", false);
 		}
 	}
+
+	void OnColliderEnter2D(Collider2D col)
+	{
+		if (col.gameObject.tag == "Player")
+		{
+
+			col.SendMessage("EnemyKnockBack", transform.position.x);
+
+		}
+
+	}
+
 }
