@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     private GameObject barravida;
 
+    private AudioSource trepar;
+
     public Vector3 respawnPoint;
 
 	public bool trepando;
@@ -41,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
 
         respawnPoint = transform.position;
+
 
         
 
@@ -140,7 +143,11 @@ public class PlayerController : MonoBehaviour
 
         }
 
-
+        if (!trepando)
+        {
+            trepar = GameObject.FindGameObjectWithTag("Enredadera").GetComponent<AudioSource>();
+            trepar.Play();
+        }
 
 
 

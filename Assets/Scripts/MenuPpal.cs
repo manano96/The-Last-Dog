@@ -61,6 +61,13 @@ public class MenuPpal : MonoBehaviour
             Instantiate(Player, transform.position, Quaternion.identity);
             Time.timeScale = 1;
         }
+        if (GameControl.nivel == 3)
+        {
+            SceneManager.LoadScene("nivel4");
+            Destroy(GameObject.FindWithTag("Player"));
+            Instantiate(Player, transform.position, Quaternion.identity);
+            Time.timeScale = 1;
+        }
 
     }
 

@@ -115,7 +115,10 @@ public class Rango : MonoBehaviour
             if (Time.time > nextAtack)
             {
                 nextAtack = Time.time + atackRate;
+                
                 barravida.SendMessage("TakeDamage", 10);
+                AudioSource audio = GetComponent<AudioSource>();
+                audio.Play();
             }
         }
         else

@@ -135,6 +135,8 @@ public class Rugbier : MonoBehaviour {
             {
                 nextAtack = Time.time + atackRate;
                 barravida.SendMessage("TakeDamage", 10);
+                AudioSource audio = GetComponent<AudioSource>();
+                audio.Play();
             }
         }
         else

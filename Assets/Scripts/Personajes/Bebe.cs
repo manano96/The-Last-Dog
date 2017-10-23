@@ -126,6 +126,8 @@ public class Bebe : MonoBehaviour
             {
                 nextAtack = Time.time + atackRate;
                 barravida.SendMessage("TakeDamage", 5);
+                AudioSource audio = GetComponent<AudioSource>();
+                audio.Play();
             }
         }
         else
