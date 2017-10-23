@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: f74b34cc65d336047a3ea5e9224c0684
-timeCreated: 1508710745
+guid: d46ae2ae87187bb43b0b760ea35805d6
+timeCreated: 1508717917
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: jefe_babosa_mov_sprite_sheet_0
-    21300002: jefe_babosa_mov_sprite_sheet_1
-    21300004: jefe_babosa_mov_sprite_sheet_2
-    21300006: jefe_babosa_mov_sprite_sheet_3
+    21300000: punta_barco_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -82,57 +79,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jefe_babosa_mov_sprite_sheet_0
+      name: punta_barco_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 20
-        width: 146
-        height: 25
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: jefe_babosa_mov_sprite_sheet_1
-      rect:
-        serializedVersion: 2
-        x: 190
-        y: 20
-        width: 140
-        height: 25
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: jefe_babosa_mov_sprite_sheet_2
-      rect:
-        serializedVersion: 2
-        x: 348
-        y: 20
-        width: 146
-        height: 25
-      alignment: 6
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: jefe_babosa_mov_sprite_sheet_3
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 20
-        width: 146
-        height: 25
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 16
+        y: 3
+        width: 84
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

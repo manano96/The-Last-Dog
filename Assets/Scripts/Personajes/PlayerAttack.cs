@@ -69,6 +69,7 @@ public class PlayerAttack : MonoBehaviour {
 			attackTimer = attackCd;
 
 			fuenteAudio.clip = Ladrido;
+            fuenteAudio.mute = !fuenteAudio.mute;
 			fuenteAudio.Play();
 
 			//Invoke("ActivateNow", timeR);
