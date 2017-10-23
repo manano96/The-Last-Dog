@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Caja : MonoBehaviour {
-
+ 
     private GameObject Player;
 
     private Animator anim;
@@ -15,6 +15,8 @@ public class Caja : MonoBehaviour {
         anim = Player.GetComponent<Animator>();
 
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+
+
     }
 	
 	// Update is called once per frame
@@ -31,6 +33,10 @@ public class Caja : MonoBehaviour {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
+            //musica.SetActive(true);
+
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
         }
 
        
@@ -46,7 +52,9 @@ public class Caja : MonoBehaviour {
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
 
 
-
+           // musica.SetActive(false);
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Pause();
         }
 
        
