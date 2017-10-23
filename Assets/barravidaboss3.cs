@@ -10,6 +10,8 @@ public class barravidaboss3 : MonoBehaviour {
 
 
     private GameObject Player;
+    private GameObject camion;
+
     private Animator caminar;
     private Rigidbody2D sapo;
 
@@ -25,6 +27,8 @@ public class barravidaboss3 : MonoBehaviour {
         hp = maxHp;
 
         Player = GameObject.Find("Basura_Boss");
+        camion = GameObject.Find("cosa");
+
 
         caminar = Player.GetComponent<Animator>();
 
@@ -65,12 +69,17 @@ public class barravidaboss3 : MonoBehaviour {
         if (vida.transform.localScale.x == 0)
 
         {
-            //caminar.SetBool("Muerte", true);
+            Player.GetComponent<CapsuleCollider2D>().enabled = false;
+            Player.GetComponent<BoxCollider2D>().enabled = false;
+            camion.GetComponent<BoxCollider2D>().enabled = false;
+
+            caminar.SetBool("Muerte", true);
             //Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             //Player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 
 
-            Player.GetComponent<CapsuleCollider2D>().enabled = false;
+            
+
 
 
             camara1.enabled = true;
