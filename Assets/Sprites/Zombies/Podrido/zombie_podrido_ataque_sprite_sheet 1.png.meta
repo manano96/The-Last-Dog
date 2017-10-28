@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 27b1fb522b08c6046860f79667476f65
-timeCreated: 1509159708
+guid: cda539bac03e26545814bdcff2f3d331
+timeCreated: 1509166713
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: caminata_0
-    21300002: caminata_1
-    21300004: caminata_2
-    21300006: caminata_3
+    21300000: zombie_podrido_ataque_sprite_sheet 1_0
+    21300002: zombie_podrido_ataque_sprite_sheet 1_1
+    21300004: zombie_podrido_ataque_sprite_sheet 1_2
+    21300006: zombie_podrido_ataque_sprite_sheet 1_3
+    21300008: zombie_podrido_ataque_sprite_sheet 1_4
+    21300010: zombie_podrido_ataque_sprite_sheet 1_5
+    21300012: zombie_podrido_ataque_sprite_sheet 1_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -78,70 +81,103 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: caminata_0
+      name: zombie_podrido_ataque_sprite_sheet 1_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 96
         y: 11
         width: 57
-        height: 74
+        height: 68
       alignment: 9
-      pivot: {x: 0.7622617, y: 0.004262589}
+      pivot: {x: 0.740448, y: 0.007071944}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: caminata_1
+      name: zombie_podrido_ataque_sprite_sheet 1_1
       rect:
         serializedVersion: 2
-        x: 65
+        x: 167
         y: 11
-        width: 57
-        height: 73
+        width: 55
+        height: 79
       alignment: 9
-      pivot: {x: 0.7439716, y: 0.0016964821}
+      pivot: {x: 0.5087436, y: 0.00507269}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: caminata_2
+      name: zombie_podrido_ataque_sprite_sheet 1_2
       rect:
         serializedVersion: 2
-        x: 132
+        x: 257
         y: 11
-        width: 57
-        height: 72
+        width: 40
+        height: 76
       alignment: 9
-      pivot: {x: 0.7309886, y: 0.0028228099}
+      pivot: {x: 0.22348556, y: 0.005272928}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: caminata_3
+      name: zombie_podrido_ataque_sprite_sheet 1_3
       rect:
         serializedVersion: 2
-        x: 199
+        x: 334
         y: 11
-        width: 57
-        height: 73
+        width: 40
+        height: 76
       alignment: 9
-      pivot: {x: 0.75581896, y: 0.004480597}
+      pivot: {x: 0.22548905, y: 0.005272928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_ataque_sprite_sheet 1_4
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 11
+        width: 40
+        height: 76
+      alignment: 9
+      pivot: {x: 0.22548905, y: 0.005272928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_ataque_sprite_sheet 1_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 11
+        width: 67
+        height: 71
+      alignment: 9
+      pivot: {x: 0.41985083, y: 0.005644261}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: zombie_podrido_ataque_sprite_sheet 1_6
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 11
+        width: 59
+        height: 67
+      alignment: 9
+      pivot: {x: 0.5244523, y: 0.0071774954}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

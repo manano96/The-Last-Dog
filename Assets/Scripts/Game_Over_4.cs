@@ -11,6 +11,8 @@ public class Game_Over_4 : MonoBehaviour {
     private GameObject Enemy;
     private GameObject Enemy2;
     private GameObject Enemy3;
+    private GameObject Enemy4;
+
     private GameObject Vida;
 
     private Animator player;
@@ -23,6 +25,8 @@ public class Game_Over_4 : MonoBehaviour {
     private PlayerAttack playerattack;
     private Bebe bebe;
     private Rugbier rug;
+    private ZombiePodrido pod;
+
 
 
 
@@ -34,6 +38,7 @@ public class Game_Over_4 : MonoBehaviour {
         Enemy = GameObject.FindGameObjectWithTag("Enemy");
         Enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
         Enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
+        Enemy4 = GameObject.FindGameObjectWithTag("Enemy4");
         Vida = GameObject.FindGameObjectWithTag("Vida");
 
         player1 = Player.GetComponent<Rigidbody2D>();
@@ -45,6 +50,7 @@ public class Game_Over_4 : MonoBehaviour {
         rango = GameObject.Find("Zombie1").GetComponent<Rango>();
         playerattack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
         bebe = GameObject.Find("Bebe1").GetComponent<Bebe>();
+        pod = GameObject.Find("ZombiePodrido").GetComponent<ZombiePodrido>();
 
 
         barravida.SetActive(true);
@@ -53,7 +59,7 @@ public class Game_Over_4 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.anyKeyDown)
         {
 
 
@@ -64,6 +70,7 @@ public class Game_Over_4 : MonoBehaviour {
             rango.enabled = true;
             playerattack.enabled = true;
             bebe.enabled = true;
+            pod.enabled = true;
 
             player.SetBool("Revivir", true);
             player.SetBool("Dead", false);

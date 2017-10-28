@@ -8,13 +8,12 @@ public class PlayerAttack : MonoBehaviour {
 	private bool ladrido = false;
 	private bool trigger = false;
 
+
 	private float attackTimer = 0f;
 	private float attackCd = 0.5f;
 
 	private Animator anim;
 	private GameObject Player;
-
-	private bool podrido = false;
 
 	public AudioClip Ladrido;
 
@@ -27,13 +26,14 @@ public class PlayerAttack : MonoBehaviour {
 	{
 		fuenteAudio = GetComponent<AudioSource>();
 		Player = GameObject.FindGameObjectWithTag("TAttack");
-		podrido = GameObject.FindGameObjectWithTag("Enemy4");
+
 
 	}
 
 	void Awake()
 	{
 		anim = gameObject.GetComponent<Animator>();
+
 	}
 
 
@@ -50,21 +50,9 @@ public class PlayerAttack : MonoBehaviour {
 	}*/
 
 
-	void OnTriggerEnter2D (Collider2D other){
-		if (other.tag == "Enemy4") 
-			podrido = true;
-		
-	}
-
-	void OnTriggerExit2D (Collider2D other){
-		if (other.tag == "Enemy4") 
-			podrido = false;
-		
-	}
-
 	void Update()
 	{
-		if(Input.GetKeyDown("z") && !attacking && !podrido)
+		if(Input.GetKeyDown("z") && !attacking)
 		{
 			attacking = true;
 			attackTimer = attackCd;
@@ -72,13 +60,7 @@ public class PlayerAttack : MonoBehaviour {
 			Invoke("ActivateNow", timeR);
 		}
 			
-		if(Input.GetKeyDown("x") && !attacking && podrido)
-		{
-			attacking = true;
-			attackTimer = attackCd;
 
-			Invoke("ActivateNow", timeR);
-		}
 
 
 		if (Input.GetKeyDown("x") && !ladrido && !trigger)

@@ -11,6 +11,8 @@ public class barravida : MonoBehaviour {
     private GameObject[] Enemy;
     private GameObject[] Enemy2;
     private GameObject[] Enemy3;
+    private GameObject[] Enemy4;
+
 
 
 
@@ -22,12 +24,16 @@ public class barravida : MonoBehaviour {
     private Animator anim2;
     private Animator bebeanim;
     private Animator rugbanim;
+    private Animator podanim;
+
 
 
     private Rigidbody2D player;
     private Rigidbody2D enemy1;
     private Rigidbody2D bebe1;
     private Rigidbody2D rugbier1;
+    private Rigidbody2D pod1;
+
 
 
     private PlayerController playercontroller;
@@ -35,8 +41,10 @@ public class barravida : MonoBehaviour {
     private PlayerAttack playerattack;
     private Bebe bebe;
     private Rugbier rugbier;
+    private ZombiePodrido pod;
 
-	private Color spr;
+
+    private Color spr;
 
 
     float hp, maxHp = 100f;
@@ -53,6 +61,8 @@ public class barravida : MonoBehaviour {
         Enemy = GameObject.FindGameObjectsWithTag("Enemy");
         Enemy2 = GameObject.FindGameObjectsWithTag("Enemy2");
         Enemy3 = GameObject.FindGameObjectsWithTag("Enemy3");
+        Enemy4 = GameObject.FindGameObjectsWithTag("Enemy4");
+
 
 
         anim = Player.GetComponent<Animator>();
@@ -127,6 +137,18 @@ public class barravida : MonoBehaviour {
 
                 Rugbier1.GetComponent<BoxCollider2D>().enabled = false;
                 rugbier1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+
+            foreach (GameObject ZombiePodr in Enemy4)
+            {
+
+                podanim = ZombiePodr.GetComponent<Animator>();
+                pod = ZombiePodr.GetComponent<ZombiePodrido>();
+
+                podanim.SetBool("Ataque", false);
+                podanim.SetBool("DentrodelRango", false);
+
+                pod.enabled = false;
             }
 
 

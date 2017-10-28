@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e7124e7b37bec7c42b6c2a12647500e4
-timeCreated: 1507492624
+timeCreated: 1509159823
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,7 @@ TextureImporter:
     21300008: zombie_podrido_ataque_sprite_sheet_4
     21300010: zombie_podrido_ataque_sprite_sheet_5
     21300012: zombie_podrido_ataque_sprite_sheet_6
+  externalObjects: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -64,6 +65,7 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -72,6 +74,7 @@ TextureImporter:
     overridden: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -80,6 +83,7 @@ TextureImporter:
     overridden: 0
   - buildTarget: Android
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -97,8 +101,8 @@ TextureImporter:
         y: 11
         width: 57
         height: 74
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.7381795, y: -0.00000006443745}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -111,8 +115,8 @@ TextureImporter:
         y: 11
         width: 55
         height: 85
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5146637, y: 0.0031627207}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -125,8 +129,8 @@ TextureImporter:
         y: 11
         width: 40
         height: 82
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.22444229, y: 0.00491768}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,8 +143,8 @@ TextureImporter:
         y: 11
         width: 40
         height: 82
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.22780304, y: 0.00491768}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,8 +157,8 @@ TextureImporter:
         y: 11
         width: 40
         height: 82
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.22780304, y: 0.00491768}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,8 +171,8 @@ TextureImporter:
         y: 11
         width: 67
         height: 82
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.41975015, y: 0.0032784299}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,8 +185,8 @@ TextureImporter:
         y: 11
         width: 56
         height: 79
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5024, y: 0.006805927}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
