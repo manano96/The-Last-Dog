@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
+
 
 public class MenuPpal : MonoBehaviour
 {
@@ -34,7 +36,11 @@ public class MenuPpal : MonoBehaviour
 
     public void BtnContinuar()
     {
-
+		GameControl.vez_continuar++;
+		Analytics.CustomEvent ("Continuar", new Dictionary<string, object>{
+				{"vez", GameControl.vez_continuar},
+				{"nivel", GameControl.nivel}
+		});
 
         if (GameControl.nivel <= 0)
         {

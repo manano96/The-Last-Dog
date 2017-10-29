@@ -7,6 +7,7 @@ public class GameControl : MonoBehaviour {
     public static GameControl control;
     public static int nivel = 0;
     public static int check = 0;
+	public static int vez_continuar = 0;
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this);
