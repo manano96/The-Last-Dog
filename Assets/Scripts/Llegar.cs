@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class Llegar : MonoBehaviour {
-
 
 	public string escena;
 
@@ -26,6 +26,13 @@ public class Llegar : MonoBehaviour {
 
             SceneManager.LoadScene(escena);
             GameControl.nivel ++;
+
+			Analytics.CustomEvent("Empezar", new Dictionary<string, object>
+				{
+					{"nivel", GameControl.nivel},
+
+				});
+
         }
     }
 }
