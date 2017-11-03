@@ -37,19 +37,6 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 
-	/*void OnTriggerStay(Collider2D col){
-		if (col.tag == "Enemy3") {
-			trigger = true;
-		}
-	}
-
-	void OnTriggerExit(Collider2D col){
-		if (col.tag == "Enemy3") {
-			trigger = false;
-		}
-	}*/
-
-
 	void Update()
 	{
 		if(Input.GetKeyDown("z") && !attacking)
@@ -71,8 +58,6 @@ public class PlayerAttack : MonoBehaviour {
 			fuenteAudio.clip = Ladrido;
             
 			fuenteAudio.Play();
-
-			//Invoke("ActivateNow", timeR);
 		}
 
 
@@ -83,8 +68,6 @@ public class PlayerAttack : MonoBehaviour {
 
 			fuenteAudio.clip = Ladrido;
 			fuenteAudio.Play();
-
-			//Invoke("ActivateNow", timeR);
 
 		}
 
