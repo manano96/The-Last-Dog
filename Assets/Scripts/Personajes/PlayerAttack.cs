@@ -16,8 +16,10 @@ public class PlayerAttack : MonoBehaviour {
 	private GameObject Player;
 
 	public AudioClip Ladrido;
+    public AudioClip Morder;
 
-	float timeR = 0.4f;
+
+    float timeR = 0.4f;
 
 	AudioSource fuenteAudio;
 
@@ -44,7 +46,11 @@ public class PlayerAttack : MonoBehaviour {
 			attacking = true;
 			attackTimer = attackCd;
 
-			Invoke("ActivateNow", timeR);
+            fuenteAudio.clip = Morder;
+
+            fuenteAudio.Play();
+
+            Invoke("ActivateNow", timeR);
 		}
 			
 
