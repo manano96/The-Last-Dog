@@ -51,11 +51,14 @@ public class GameOver3 : MonoBehaviour
         playerattack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
         bebe = GameObject.Find("Bebe1").GetComponent<Bebe>();
 
+		GameControl.veces_morir++;
 		Analytics.CustomEvent("morir", new Dictionary<string, object>
 			{
-				{"nivel", GameControl.nivel}
-			});
+				{"nivel", GameControl.nivel},
+				{"posicion_level", Player.transform.position.x},
+				{"cantidad", GameControl.veces_morir},
 
+			});
 
         barravida.SetActive(true);
 

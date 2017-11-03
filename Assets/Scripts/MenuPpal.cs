@@ -29,6 +29,9 @@ using UnityEngine.Analytics;
 
     public void BtnNuevoJuego(string nivelNuevoJuego)
     {
+		Analytics.CustomEvent ("NuevoJuego", new Dictionary<string, object> {
+			{"nivel", GameControl.nivel}	
+		});
         SceneManager.LoadScene(nivelNuevoJuego);
         Time.timeScale = 1;
 

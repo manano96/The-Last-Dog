@@ -8,6 +8,12 @@ public class GameControl : MonoBehaviour {
     public static int nivel = 0;
     public static int check = 0;
 	public static int vez_continuar = 0;
+	public static int hueso = 0;
+	public static int salir = 0;
+	public static int veces_morir = 0;
+	public float StartTimeLevel = 0;
+	public string Calificar;
+
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this);
