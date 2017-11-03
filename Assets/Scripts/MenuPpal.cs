@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Analytics;
 
 
-public class MenuPpal : MonoBehaviour
+
+	public class MenuPpal : MonoBehaviour
 {
 	public GameObject OcultarMouse;
     public GameObject Player;
@@ -79,6 +80,23 @@ public class MenuPpal : MonoBehaviour
 
     }
 
+	public void BtnCalificar(string escenaCalificar)
+	{
+		SceneManager.LoadScene(escenaCalificar);
+		Time.timeScale = 1;
+
+
+	}
+
+	public void BtnCreditos(string escenaCreditos)
+	{
+		SceneManager.LoadScene(escenaCreditos);
+		Time.timeScale = 1;
+
+
+	}
+
+
     public void BtnMute()
     {
         AudioListener.pause = !AudioListener.pause;
@@ -89,4 +107,11 @@ public class MenuPpal : MonoBehaviour
     {
         Application.Quit();
     }
+
+	public void BtnIraMenu(string VolveraMenu)
+	{
+		SceneManager.LoadScene(VolveraMenu);
+		Time.timeScale = 1;
+	}
+
 }
