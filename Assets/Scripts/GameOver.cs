@@ -24,6 +24,7 @@ public class GameOver : MonoBehaviour {
     private PlayerAttack playerattack;
     private Bebe bebe;
     private Rugbier rug;
+	private int num = 0;
 
 
 
@@ -48,7 +49,10 @@ public class GameOver : MonoBehaviour {
 
 		Analytics.CustomEvent("morir", new Dictionary<string, object>
 			{
-				{"nivel", GameControl.nivel}
+				{"nivel", GameControl.nivel},
+				{"posicion_level", Player.transform.position.x},
+				{"cantidad", num += 1},
+	
 			});
 
         barravida.SetActive(true);
