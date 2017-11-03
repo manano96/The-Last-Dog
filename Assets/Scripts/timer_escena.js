@@ -11,10 +11,10 @@ function Update (){
 		Instantiate(Player, new Vector2(-22.74f, -0.04f), Quaternion.identity);
         Application.LoadLevel(escena); 
 
-        Analytics.CustomEvent("Empezar", new Dictionary<string, object>
+        /*Analytics.CustomEvent("Empezar", new Dictionary<string, object>
 			{
 				{"nivel", GameControl.nivel}
-			});
+			});*/
     }
 
 }
