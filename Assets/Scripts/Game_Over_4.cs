@@ -8,6 +8,7 @@ public class Game_Over_4 : MonoBehaviour {
 
     private GameObject barravida;
     private GameObject Player;
+    private SpriteRenderer spr;
     private GameObject Enemy;
     private GameObject Enemy2;
     private GameObject Enemy3;
@@ -35,6 +36,8 @@ public class Game_Over_4 : MonoBehaviour {
     {
         barravida = GameObject.Find("barravida");
         Player = GameObject.FindGameObjectWithTag("Player");
+        spr = Player.GetComponent<SpriteRenderer>();
+
         Enemy = GameObject.FindGameObjectWithTag("Enemy");
         Enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
         Enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
@@ -61,7 +64,7 @@ public class Game_Over_4 : MonoBehaviour {
     {
         if (Input.anyKeyDown)
         {
-
+            spr.color = Color.white;
 
             gameObject.SetActive(false);
             Time.timeScale = 1f;

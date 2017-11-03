@@ -9,6 +9,7 @@ public class GameOver : MonoBehaviour {
 
     private GameObject barravida;
     private GameObject Player;
+    private SpriteRenderer spr;
     private GameObject Enemy;
     private GameObject Enemy2;
     private GameObject Enemy3;
@@ -32,6 +33,8 @@ public class GameOver : MonoBehaviour {
     void Start () {
         barravida = GameObject.Find("barravida");
         Player = GameObject.FindGameObjectWithTag("Player");
+        spr = Player.GetComponent<SpriteRenderer>();
+
         Enemy = GameObject.FindGameObjectWithTag("Enemy");
         Enemy2 = GameObject.FindGameObjectWithTag("Enemy2");
         Enemy3 = GameObject.FindGameObjectWithTag("Enemy3");
@@ -62,7 +65,8 @@ public class GameOver : MonoBehaviour {
 	void Update () {
         if (Input.anyKeyDown){
 
-          
+            spr.color = Color.white;
+
             gameObject.SetActive(false);
             Time.timeScale = 1f;
 

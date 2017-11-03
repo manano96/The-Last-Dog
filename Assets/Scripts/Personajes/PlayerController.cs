@@ -245,6 +245,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
     void EnableMovement()
     {
         movement = true;
