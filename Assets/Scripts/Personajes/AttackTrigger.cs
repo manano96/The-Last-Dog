@@ -23,7 +23,7 @@ public class AttackTrigger : MonoBehaviour {
 
 
 
-        if (col.CompareTag("Enemy3") || col.CompareTag("Enemy4"))
+        if (col.isTrigger != true && col.CompareTag("Enemy3") || col.isTrigger != true && col.CompareTag("Enemy4"))
         {
             col.SendMessageUpwards("Damage", dmg);
         }
