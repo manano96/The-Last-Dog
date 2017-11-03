@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class GameOver : MonoBehaviour {
 
@@ -45,6 +46,10 @@ public class GameOver : MonoBehaviour {
         playerattack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
         bebe = GameObject.Find("Bebe1").GetComponent<Bebe>();
 
+		Analytics.CustomEvent("morir", new Dictionary<string, object>
+			{
+				{"nivel", GameControl.nivel}
+			});
 
         barravida.SetActive(true);
     }

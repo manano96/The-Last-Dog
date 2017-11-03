@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class comida : MonoBehaviour {
 
     private GameObject barravida;
+	public int num = 0;
 
     // Use this for initialization
     void Start () {
@@ -24,6 +26,13 @@ public class comida : MonoBehaviour {
 
             barravida.SendMessage("NoDamage", 30);
             Destroy(gameObject);
+
+			Analytics.CustomEvent("ComerHueso", new Dictionary<string, object>
+				{
+					{"nivel", GameControl.nivel},
+					{"hueso", num += 1},
+				});
+			
         }
     }
 }

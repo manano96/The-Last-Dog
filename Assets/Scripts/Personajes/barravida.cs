@@ -47,7 +47,7 @@ public class barravida : MonoBehaviour {
     private Color spr;
 
 
-    float hp, maxHp = 100f;
+    private float hp, maxHp = 100f;
 
 	// Use this for initialization
 	void Start () {
