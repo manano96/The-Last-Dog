@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class Checkpointscontroller : MonoBehaviour {
 
@@ -25,5 +26,11 @@ public class Checkpointscontroller : MonoBehaviour {
 			checkpointReached = true;
             GetComponent<CircleCollider2D>().enabled = false;
         }
+
+
+		Analytics.CustomEvent("Guardar", new Dictionary<string, object>
+			{
+				{"checkpoint", this.transform.position.x}
+			});
 	}
 }
