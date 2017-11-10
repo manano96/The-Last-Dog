@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private AudioSource trepar;
 
-    public Vector3 respawnPoint;
+    public Vector2 respawnPoint;
 
 	public bool trepando;
 
