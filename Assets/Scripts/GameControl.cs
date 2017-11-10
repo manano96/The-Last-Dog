@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour {
     public static GameControl control;
     public static int nivel = 0;
+	public static int nivelAlcanzado = 0;
+	public static int abandonado = 0;
     public static int check = 0;
 	public static int vez_continuar = 0;
 	public static int hueso = 0;

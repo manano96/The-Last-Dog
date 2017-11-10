@@ -25,11 +25,11 @@ public class Llegar : MonoBehaviour {
             Destroy(GameObject.FindWithTag("Player"));
 
             SceneManager.LoadScene(escena);
-            GameControl.nivel ++;
+            GameControl.nivelAlcanzado ++;
 
-			Analytics.CustomEvent("Empezar", new Dictionary<string, object>
+			Analytics.CustomEvent("Nivel Alcanzado", new Dictionary<string, object>
 				{
-					{"nivel", GameControl.nivel},
+					{"nivel", GameControl.nivelAlcanzado},
 
 				});
 
