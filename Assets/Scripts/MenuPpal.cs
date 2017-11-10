@@ -95,6 +95,12 @@ using UnityEngine.Analytics;
 	{
 		SceneManager.LoadScene(escenaCreditos);
 		Time.timeScale = 1;
+		GameControl.verCreditos++;
+		Analytics.CustomEvent("VerCreditos", new Dictionary<string, object>
+			{
+				{"ver", GameControl.verCreditos},
+
+			});
 
 
 	}
