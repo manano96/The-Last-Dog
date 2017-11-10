@@ -123,4 +123,57 @@ using UnityEngine.Analytics;
 		Time.timeScale = 1;
 	}
 
+	public void BtnMM()
+	{
+		GameControl.muyMalo++;
+		Analytics.CustomEvent("Calificacion", new Dictionary<string, object>
+			{
+				{"nota", GameControl.muyMalo},
+
+
+			});
+	}
+
+	public void BtnM()
+	{
+		GameControl.Malo++;
+		Analytics.CustomEvent("Calificacion", new Dictionary<string, object>
+			{
+				{"nota", GameControl.Malo},
+
+
+			});
+	}
+
+	public void BtnNor()
+	{
+		GameControl.Normal++;
+		Analytics.CustomEvent("Calificacion", new Dictionary<string, object>
+			{
+				{"nota", GameControl.Normal},
+
+
+			});
+	}
+	public void BtnBueno()
+	{
+		GameControl.Bueno++;
+		Analytics.CustomEvent("Calificacion", new Dictionary<string, object>
+			{
+				{"nota", GameControl.Bueno},
+
+
+			});
+	}
+	public void BtnMB()
+	{
+		GameControl.muyBueno++;
+		Analytics.CustomEvent("Calificacion", new Dictionary<string, object>
+			{
+				{"nota", GameControl.muyBueno},
+
+
+			});
+	}
+
 }

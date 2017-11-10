@@ -9,6 +9,11 @@ public class GameControl : MonoBehaviour {
 	public static int nivelAlcanzado = 0;
 	public static int abandonado = 0;
     public static int check = 0;
+	public static int muyMalo = 0;
+	public static int Malo = 0;
+	public static int Normal = 0;
+	public static int Bueno = 0;
+	public static int muyBueno = 0;
 	public static int verCreditos = 0;
 	public static int vez_continuar = 0;
 	public static int hueso = 0;
