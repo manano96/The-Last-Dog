@@ -5,6 +5,8 @@ using UnityEngine.Analytics;
 
 public class agujero : MonoBehaviour
 {
+    private GameObject Player;
+
     private GameObject saltarno;
     private GameObject enemy;
     private GameObject enemy2;
@@ -17,6 +19,7 @@ public class agujero : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
 
         barravida = GameObject.Find("barravida");
         saltarno = GameObject.FindGameObjectWithTag("Tuto");

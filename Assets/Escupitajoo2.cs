@@ -4,47 +4,46 @@ using UnityEngine;
 
 public class Escupitajoo2 : MonoBehaviour {
 
-    private GameObject barravida;
+    private Transform playerTrans;
+
+    Rigidbody2D escupitajoRB;
+
+    public float escupitajoSpeed;
+
     private Animator anim;
-    private Rigidbody2D rgb2;
-    private GameObject Player;
-    private GameObject Enemy4;
 
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
 
-    public float Destroygota;
+        playerTrans = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        escupitajoRB = GetComponent<Rigidbody2D>();
+    }
 
     // Use this for initialization
     void Start()
     {
-        barravida = GameObject.Find("barravida");
-        rgb2 = GetComponent<Rigidbody2D>();
-        Player = GameObject.FindGameObjectWithTag("Player");
-        Enemy4 = GameObject.FindGameObjectWithTag("Enemy4");
+        if(playerTrans.localPosition.x < transform.localPosition.x){
 
-        anim = this.gameObject.GetComponent<Animator>();
+            escupitajoRB.velocity = new Vector2(-escupitajoSpeed, escupitajoRB.velocity.y);
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
 
-        Destroy(this.gameObject, 1);
+            escupitajoRB.velocity = new Vector2(escupitajoSpeed, escupitajoRB.velocity.y);
+            transform.localScale = new Vector3(-1, 1, 1);
+
+
+
+        }
+
+        Destroy(this.gameObject, 2.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        float xenemy = Enemy4.transform.position.x;
-        float xplayer = Player.transform.position.x;
-
-
-        if (xenemy >= xplayer)
-        {
-            rgb2.AddForce(Vector2.left * 6f * 6f);
-            
-        }
-
-        if (xenemy <= xplayer)
-        {
-            rgb2.AddForce(Vector2.right * 6f * 6f);
-            transform.localScale = new Vector3 (-1f, 1f, 1f);
-        }
 
         
     }
@@ -55,7 +54,7 @@ public class Escupitajoo2 : MonoBehaviour {
         {
             other.SendMessage("EnemyKnockBack", transform.position.x);
             anim.SetBool("Choque", true);
-            Destroy(this.gameObject, Destroygota);
+            Destroy(this.gameObject, 0.4f);
 
         }
 
@@ -63,7 +62,7 @@ public class Escupitajoo2 : MonoBehaviour {
         {
             anim.SetBool("Choque", true);
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            Destroy(this.gameObject, Destroygota);
+            Destroy(this.gameObject, 0.4f);
 
         }
     }

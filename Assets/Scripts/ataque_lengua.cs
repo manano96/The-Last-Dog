@@ -12,11 +12,13 @@ public class ataque_lengua : MonoBehaviour {
 
     private GameObject barravida;
 
+    private GameObject Player;
+
     // Use this for initialization
     void Start () {
 
         barravida = GameObject.Find("barravida");
-
+        Player = GameObject.FindGameObjectWithTag("Player");
 
     }
 	

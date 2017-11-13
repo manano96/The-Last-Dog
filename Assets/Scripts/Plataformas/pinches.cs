@@ -5,10 +5,12 @@ using UnityEngine.Analytics;
 
 public class pinches : MonoBehaviour
 {
+    private GameObject Player;
 
     // Use this for initialization
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
 
     }
 

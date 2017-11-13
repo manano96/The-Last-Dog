@@ -8,9 +8,12 @@ public class Piston2 : MonoBehaviour {
 
     private bool activar = true;
 
+    private GameObject Player;
+
     // Use this for initialization
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
 
         barravida = GameObject.Find("barravida");
     }

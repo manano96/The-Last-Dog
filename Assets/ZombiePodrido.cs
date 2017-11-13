@@ -9,6 +9,7 @@ public class ZombiePodrido : MonoBehaviour {
 
     private Animator caminar;
 
+    public GameObject escupiSpawner;
 
     private GameObject Player;
     private float Ladrar;
@@ -83,7 +84,7 @@ public class ZombiePodrido : MonoBehaviour {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
-        Ataque1 = Vector2.Distance(this.transform.position, Player.transform.position);
+        Ataque1 = Vector2.Distance(transform.position, Player.transform.position);
 
 
         if (Ataque1 <= 6)
@@ -96,7 +97,7 @@ public class ZombiePodrido : MonoBehaviour {
             {
                 nextAtack = Time.time + atackRate;
 
-                Instantiate(Escupitajo, new Vector2(this.transform.position.x - 1f, this.transform.position.y + 0.85f), Quaternion.identity);
+                Instantiate(Escupitajo, escupiSpawner.transform.position, Escupitajo.transform.rotation);
                 AudioSource audio = GetComponent<AudioSource>();
                 audio.Play();
             }
@@ -104,6 +105,9 @@ public class ZombiePodrido : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.X))
             {
                 curHealth -= 50;
+                Invoke("Colore", 0.3f);
+
+                spr.color = Color.red;
             }
         }
         else
