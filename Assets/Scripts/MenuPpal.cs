@@ -126,10 +126,10 @@ using UnityEngine.Analytics;
 	public void BtnMM()
 	{
 		GameControl.muyMalo++;
-		Analytics.CustomEvent("Calificacion", new Dictionary<string, object>
+		Analytics.CustomEvent("Calificar", new Dictionary<string, object>
 			{
-				{"nota", GameControl.muyMalo},
-
+				{"calificacion", "Muy Malo"},
+				{"nota", 1},
 
 			});
 	}
@@ -139,8 +139,8 @@ using UnityEngine.Analytics;
 		GameControl.Malo++;
 		Analytics.CustomEvent("Calificacion", new Dictionary<string, object>
 			{
-				{"nota", GameControl.Malo},
-
+				{"calificacion", "Malo"},
+				{"nota", 2},
 
 			});
 	}
@@ -150,8 +150,8 @@ using UnityEngine.Analytics;
 		GameControl.Normal++;
 		Analytics.CustomEvent("Calificacion", new Dictionary<string, object>
 			{
-				{"nota", GameControl.Normal},
-
+				{"calificacion", "Normal"},
+				{"nota", 3},
 
 			});
 	}
@@ -160,8 +160,8 @@ using UnityEngine.Analytics;
 		GameControl.Bueno++;
 		Analytics.CustomEvent("Calificacion", new Dictionary<string, object>
 			{
-				{"nota", GameControl.Bueno},
-
+				{"calificacion", "Bueno"},
+				{"nota", 4},
 
 			});
 	}
@@ -170,8 +170,8 @@ using UnityEngine.Analytics;
 		GameControl.muyBueno++;
 		Analytics.CustomEvent("Calificacion", new Dictionary<string, object>
 			{
-				{"nota", GameControl.muyBueno},
-
+				{"calificacion", "Muy Bueno"},
+				{"nota", 5},
 
 			});
 	}
