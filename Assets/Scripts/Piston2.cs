@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class Piston2 : MonoBehaviour {
     private GameObject barravida;
@@ -80,6 +81,14 @@ public class Piston2 : MonoBehaviour {
 
             coll.gameObject.SendMessage("EnemyKnockBack", transform.position.x);
 
+			Analytics.CustomEvent("Damage", new Dictionary<string, object>
+				{
+					{"nivel", GameControl.nivel},
+					{"posicion_level", Player.transform.position.x},
+					{"tipo", this.gameObject},
+
+				});
+
             GetComponent<BoxCollider2D>().enabled = false;
 
         }
@@ -91,6 +100,14 @@ public class Piston2 : MonoBehaviour {
         {
 
             coll.gameObject.SendMessage("EnemyKnockBack", transform.position.x);
+
+			Analytics.CustomEvent("Damage", new Dictionary<string, object>
+				{
+					{"nivel", GameControl.nivel},
+					{"posicion_level", Player.transform.position.x},
+					{"tipo", this.gameObject},
+
+				});
 
 
             Invoke("Cerrar3", 1f);

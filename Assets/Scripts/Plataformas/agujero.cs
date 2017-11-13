@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class agujero : MonoBehaviour
 {
@@ -37,6 +38,14 @@ public class agujero : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             barravida.SendMessage("TakeDamage", 100);
+
+			Analytics.CustomEvent("Damage", new Dictionary<string, object>
+				{
+					{"nivel", GameControl.nivel},
+					{"posicion_level", Player.transform.position.x},
+					{"tipo", this.gameObject},
+
+				});
             
 
         }

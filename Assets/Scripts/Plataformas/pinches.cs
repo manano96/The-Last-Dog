@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class pinches : MonoBehaviour
 {
@@ -23,6 +24,14 @@ public class pinches : MonoBehaviour
         {
            
                 col.SendMessage("EnemyKnockBack", transform.position.x);
+
+			Analytics.CustomEvent("Damage", new Dictionary<string, object>
+				{
+					{"nivel", GameControl.nivel},
+					{"posicion_level", Player.transform.position.x},
+					{"tipo", this.gameObject},
+
+				});
 
         }
 
