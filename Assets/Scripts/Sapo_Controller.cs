@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class Sapo_Controller : MonoBehaviour {
 
@@ -124,7 +125,15 @@ public class Sapo_Controller : MonoBehaviour {
         if(col.gameObject.tag == "Player" && transform.position.y > 0f)
         {
             
-                Player.SendMessage("EnemyKnockBack", transform.position.x);
+            Player.SendMessage("EnemyKnockBack", transform.position.x);
+
+			Analytics.CustomEvent("Damage", new Dictionary<string, object>
+				{
+					{"nivel", GameControl.nivel},
+					{"posicion_level", Player.transform.position.x},
+					{"tipo", this.gameObject},
+
+				});
             
         }
     }

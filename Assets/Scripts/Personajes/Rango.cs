@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 
 public class Rango : MonoBehaviour
@@ -119,6 +120,15 @@ public class Rango : MonoBehaviour
                 barravida.SendMessage("TakeDamage", 10);
                 AudioSource audio = GetComponent<AudioSource>();
                 audio.Play();
+
+				Analytics.CustomEvent("Damage", new Dictionary<string, object>
+					{
+						{"nivel", GameControl.nivel},
+						{"posicion_level", Player.transform.position.x},
+						{"tipo", this.gameObject},
+
+					});
+
             }
         }
         else

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 
 public class barravida : MonoBehaviour {
@@ -103,10 +104,14 @@ public class barravida : MonoBehaviour {
                 anim2.SetBool("Ataque", false);
                 anim2.SetBool("DentrodelRango", false);
 
+
                 rango.enabled = false;
 
                 Zombie1.GetComponent<BoxCollider2D>().enabled = false;
                 enemy1.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
+
+
             }
 
             foreach (GameObject Bebe1 in Enemy2)
