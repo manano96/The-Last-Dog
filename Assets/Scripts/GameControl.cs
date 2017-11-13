@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class GameControl : MonoBehaviour {
     public static GameControl control;
+	public float TiempoLevel;
     public static int nivel = 0;
 	public static int ganar = 0;
 	public static int abandonado = 0;
@@ -29,7 +31,11 @@ public class GameControl : MonoBehaviour {
             control = this;
         else if (control != this)
             Destroy(gameObject);
-
+		TiempoLevel = Time.time;
+		Analytics.CustomEvent("Nivel Alcanzado", new Dictionary<string, object>
+			{
+				{"tiempo", TiempoLevel},
+			});
     }
 
     // Update is called once per frame
