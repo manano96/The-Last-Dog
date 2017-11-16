@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class PlayerController : MonoBehaviour
 {
@@ -68,6 +69,13 @@ public class PlayerController : MonoBehaviour
 
             GetComponent<BoxCollider2D>().size = new Vector2(1.06f, 0.9333333f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0.07f, 0.4666667f);
+
+			Analytics.CustomEvent ("saltar", new Dictionary<string, object> {
+				{ "posicion_level", transform.position.x },
+
+			});
+
+
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl) | Input.GetKeyDown(KeyCode.LeftShift))
