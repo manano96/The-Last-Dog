@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 
 public class Game_Over_4 : MonoBehaviour {
 
@@ -55,6 +56,15 @@ public class Game_Over_4 : MonoBehaviour {
         bebe = GameObject.Find("Bebe1").GetComponent<Bebe>();
         pod = GameObject.Find("ZombiePodrido").GetComponent<ZombiePodrido>();
 
+		GameControl.veces_morir++;
+
+		Analytics.CustomEvent("morir", new Dictionary<string, object>
+			{
+				{"nivel", GameControl.nivel},
+				{"posicion_level_2", Player.transform.position.x},
+				{"cantidad", GameControl.veces_morir},
+
+			});
 
         barravida.SetActive(true);
     }
