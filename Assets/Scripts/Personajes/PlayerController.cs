@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool grounded;
     private float jumpPower = 7.3f;
 
+
     private Rigidbody2D rb2d;
     private Animator anim;
     private bool jump;
@@ -69,11 +70,38 @@ public class PlayerController : MonoBehaviour
 
             GetComponent<BoxCollider2D>().size = new Vector2(1.06f, 0.9333333f);
             GetComponent<BoxCollider2D>().offset = new Vector2(0.07f, 0.4666667f);
+		
 
-			Analytics.CustomEvent ("saltar", new Dictionary<string, object> {
-				{ "posicion_level", transform.position.x },
 
-			});
+			if (transform.position.x > 14 && transform.position.x< 17 && GameControl.nivel==0) 
+			
+			Analytics.CustomEvent ("saltar.auto", new Dictionary<string, object> {
+
+				{ "posicion_level1", transform.position.x },
+				
+					}
+			);
+
+			if (transform.position.x > 147 && transform.position.x< 150 && GameControl.nivel==0) 
+
+				Analytics.CustomEvent ("saltar.ventana.1.pueblo", new Dictionary<string, object> {
+
+					{ "posicion_level1", transform.position.x },
+
+				}
+				);
+
+			if (transform.position.x > 42 && transform.position.x< 49 && GameControl.nivel==2) 
+
+				Analytics.CustomEvent ("saltar.ventana.1.ciudad", new Dictionary<string, object> {
+
+					{ "posicion_level3", transform.position.x },
+
+				}
+				);
+			
+
+
 
 
         }
