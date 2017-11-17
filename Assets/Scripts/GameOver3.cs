@@ -55,7 +55,7 @@ public class GameOver3 : MonoBehaviour
 		Analytics.CustomEvent("morir", new Dictionary<string, object>
 			{
 				{"nivel", GameControl.nivel},
-				{"posicion_level", Player.transform.position.x},
+				{"posicion_level_3", Player.transform.position.x},
 				{"cantidad", GameControl.veces_morir},
 
 			});
