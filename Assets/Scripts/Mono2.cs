@@ -38,7 +38,7 @@ public class Mono2 : MonoBehaviour {
 			Analytics.CustomEvent("Damage", new Dictionary<string, object>
 				{
 					{"nivel", GameControl.nivel},
-					{"posicion_level", Player.transform.position.x},
+					{"posicion_level_2", Player.transform.position.x},
 					{"tipo", this.gameObject},
 
 				});

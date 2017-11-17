@@ -22,7 +22,7 @@ public class pinches : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+		if (col.gameObject.tag == "Player" && GameControl.nivel == 0)
         {
            
                 col.SendMessage("EnemyKnockBack", transform.position.x);
@@ -30,12 +30,57 @@ public class pinches : MonoBehaviour
 			Analytics.CustomEvent("Damage", new Dictionary<string, object>
 				{
 					{"nivel", GameControl.nivel},
-					{"posicion_level", Player.transform.position.x},
+					{"posicion_level_1", Player.transform.position.x},
 					{"tipo", this.gameObject},
 
 				});
 
         }
+
+		if (col.gameObject.tag == "Player" && GameControl.nivel == 1)
+		{
+
+			col.SendMessage("EnemyKnockBack", transform.position.x);
+
+			Analytics.CustomEvent("Damage", new Dictionary<string, object>
+				{
+					{"nivel", GameControl.nivel},
+					{"posicion_level_2", Player.transform.position.x},
+					{"tipo", this.gameObject},
+
+				});
+
+		}
+
+		if (col.gameObject.tag == "Player" && GameControl.nivel == 2)
+		{
+
+			col.SendMessage("EnemyKnockBack", transform.position.x);
+
+			Analytics.CustomEvent("Damage", new Dictionary<string, object>
+				{
+					{"nivel", GameControl.nivel},
+					{"posicion_level_3", Player.transform.position.x},
+					{"tipo", this.gameObject},
+
+				});
+
+		}
+
+		if (col.gameObject.tag == "Player" && GameControl.nivel == 3)
+		{
+
+			col.SendMessage("EnemyKnockBack", transform.position.x);
+
+			Analytics.CustomEvent("Damage", new Dictionary<string, object>
+				{
+					{"nivel", GameControl.nivel},
+					{"posicion_level_4", Player.transform.position.x},
+					{"tipo", this.gameObject},
+
+				});
+
+		}
 
     }
 

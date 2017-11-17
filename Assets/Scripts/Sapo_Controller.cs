@@ -130,7 +130,7 @@ public class Sapo_Controller : MonoBehaviour {
 			Analytics.CustomEvent("Damage", new Dictionary<string, object>
 				{
 					{"nivel", GameControl.nivel},
-					{"posicion_level", Player.transform.position.x},
+					{"posicion_level_1", Player.transform.position.x},
 					{"tipo", this.gameObject},
 
 				});

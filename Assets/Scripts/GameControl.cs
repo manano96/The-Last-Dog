@@ -35,6 +35,8 @@ public class GameControl : MonoBehaviour {
 		Analytics.CustomEvent("Nivel Alcanzado", new Dictionary<string, object>
 			{
 				{"tiempo", TiempoLevel},
+				{"nivel", nivel},
+
 			});
     }
 
