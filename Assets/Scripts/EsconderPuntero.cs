@@ -10,6 +10,10 @@ public class EsconderPuntero : MonoBehaviour {
 
         Cursor.visible = false;
 
+        if (GameControl.nivel >= 4)
+            Cursor.visible = true;
+
+
         
         
 	}

@@ -87,6 +87,7 @@ using UnityEngine.Analytics;
 	{
 		SceneManager.LoadScene(escenaCalificar);
 		Time.timeScale = 1;
+        Cursor.visible = true;
 
 
 	}
