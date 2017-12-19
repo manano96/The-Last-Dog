@@ -82,9 +82,9 @@ public class Piston2 : MonoBehaviour {
         if (coll.gameObject.tag == "Player")
         {
 
-            coll.gameObject.SendMessage("EnemyKnockBack", transform.position.x);
+            barravida.SendMessage("TakeDamage", 15);
 
-			Analytics.CustomEvent("Damage", new Dictionary<string, object>
+            Analytics.CustomEvent("Damage", new Dictionary<string, object>
 				{
 					{"nivel", GameControl.nivel},
 					{"posicion_level", Player.transform.position.x},
@@ -102,9 +102,9 @@ public class Piston2 : MonoBehaviour {
         if (coll.gameObject.tag == "Player")
         {
 
-            coll.gameObject.SendMessage("EnemyKnockBack", transform.position.x);
+            barravida.SendMessage("TakeDamage", 15);
 
-			Analytics.CustomEvent("Damage", new Dictionary<string, object>
+            Analytics.CustomEvent("Damage", new Dictionary<string, object>
 				{
 					{"nivel", GameControl.nivel},
 					{"posicion_level", Player.transform.position.x},

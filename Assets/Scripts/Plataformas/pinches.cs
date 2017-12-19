@@ -50,6 +50,7 @@ public class pinches : MonoBehaviour
 
 				});
 
+
 		}
 
 		if (col.gameObject.tag == "Player" && GameControl.nivel == 2)
