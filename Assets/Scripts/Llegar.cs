@@ -26,8 +26,10 @@ public class Llegar : MonoBehaviour {
 
             SceneManager.LoadScene(escena);
             GameControl.ganar ++;
+            GameControl.nivel++;
 
-			Analytics.CustomEvent("Ganar", new Dictionary<string, object>
+
+            Analytics.CustomEvent("Ganar", new Dictionary<string, object>
 				{
 					{"nivel", GameControl.ganar},
 
