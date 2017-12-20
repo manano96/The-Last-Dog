@@ -58,7 +58,7 @@ public class Game_Over_4 : MonoBehaviour {
 
 		GameControl.veces_morir++;
 
-		Analytics.CustomEvent("morir", new Dictionary<string, object>
+		Analytics.CustomEvent("muerte", new Dictionary<string, object>
 			{
 				{"nivel", GameControl.nivel},
 				{"posicion_level_4", Player.transform.position.x},

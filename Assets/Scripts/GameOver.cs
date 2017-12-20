@@ -51,7 +51,7 @@ public class GameOver : MonoBehaviour {
         bebe = GameObject.Find("Bebe1").GetComponent<Bebe>();
 
 		GameControl.veces_morir++;
-		Analytics.CustomEvent("morir", new Dictionary<string, object>
+		Analytics.CustomEvent("muerte", new Dictionary<string, object>
 			{
 				{"nivel", GameControl.nivel},
 				{"posicion_level_1", Player.transform.position.x},
